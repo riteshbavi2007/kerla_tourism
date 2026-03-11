@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kerala Beaches | Kerala Tourism</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+<style>
+:root {
+    --primary: #006141;
+    --accent: #F9A825;
+    --bg-light: #f5f8f7;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg-light);
+    color: #101816;
+}
+
+/* Navbar Customization */
+        .navbar {
+            background: rgba(255, 255, 255, 0.9) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #f0f5f3;
+            padding: 1rem 0;
+        }
+        .nav-link {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #101816 !important;
+            margin: 0 15px;
+        }
+        .nav-link:hover { color: var(--primary) !important; }
+
+        /* --- New Dropdown Styles (Added to match your theme) --- */
+        .dropdown-menu {
+            border: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            padding: 0.5rem;
+            background: white;
+        }
+        .dropdown-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+            padding: 0.7rem 1.2rem;
+            border-radius: 10px;
+            color: #101816;
+        }
+        .dropdown-item:hover {
+            background-color: var(--bg-light);
+            color: var(--primary);
+        }
+        .dropdown-item .material-symbols-outlined {
+            font-size: 20px;
+            color: var(--primary);
+        }
+
+/* Hero */
+.beach-hero {
+    height: 70vh;
+    background: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.6)),
+    url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2000');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+/* Beach Section */
+.beach-section {
+    padding: 80px 0;
+}
+
+.beach-card {
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,.08);
+    margin-bottom: 60px;
+}
+
+.beach-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.beach-content {
+    padding: 40px;
+}
+
+.beach-content h2 {
+    font-weight: 800;
+    color: var(--primary);
+}
+
+.beach-meta {
+    display: flex;
+    gap: 20px;
+    margin: 15px 0;
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.beach-meta span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.beach-content p {
+    line-height: 1.8;
+    color: #3b4f47;
+}
+
+/* Utilities */
+.badge-kerala {
+    background: var(--bg-light);
+    color: var(--primary);
+    font-weight: 700;
+    border-radius: 20px;
+    padding: 8px 16px;
+    display: inline-block;
+    margin-bottom: 15px;
+
+}
+
+        /* General Utilities */
+        .btn-primary-kerala {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            font-weight: 700;
+            border-radius: 10px;
+        }
+        .btn-accent-kerala {
+            background-color: var(--accent);
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        
+</style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center fw-bold text-primary" href="#">
+                <span class="material-symbols-outlined me-2 fs-1">travel_explore</span> Kerala Tourism
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="destDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Destinations
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="destDropdown">
+                            <li><a class="dropdown-item" href="hills.html"><span class="material-symbols-outlined">terrain</span> Hills</a></li>
+                            <li><a class="dropdown-item" href="backwaters.html"><span class="material-symbols-outlined">waves</span> Backwaters</a></li>
+                            <li><a class="dropdown-item" href="waterfall.html"><span class="material-symbols-outlined">waterfall_chart</span> Waterfall</a></li>
+                            <li><a class="dropdown-item" href="beaach.html"><span class="material-symbols-outlined">beach_access</span> Beaches</a></li>
+                            <li><a class="dropdown-item" href="wildlife.html"><span class="material-symbols-outlined">pets</span> Wild Life</a></li>
+                            <li><a class="dropdown-item" href="island.html"><span class="material-symbols-outlined">island</span> Islands</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="experiences.html">Experiences</a></li>
+                    <li class="nav-item"><a class="nav-link" href="plan.html">Plan Your Trip</a></li>
+                    <li class="nav-item"><a class="nav-link" href="inndex1.html">Home</a></li>
+                </ul>
+                <button class="btn btn-primary-kerala" onclick="location.href='plan.html'">Book Now</button>
+            </div>
+        </div>
+    </nav>
+
+<!-- HERO -->
+<header class="beach-hero text-center">
+    <div class="container">
+        <h1 class="display-2 fw-black mb-3">Beaches of Kerala</h1>
+        <p class="fs-4 opacity-90">Where the sea meets serenity 🌊</p>
+    </div>
+</header>
+
+<!-- BEACH CONTENT -->
+<section class="beach-section">
+<div class="container">
+
+<!-- VARKALA -->
+<div class="beach-card row g-0 align-items-center">
+    <div class="col-lg-6">
+        <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=1200" alt="Varkala Beach">
+    </div>
+    <div class="col-lg-6 beach-content">
+        <span class="badge-kerala">Cliff Beach</span>
+        <h2>Varkala Beach</h2>
+        <div class="beach-meta">
+            <span><span class="material-symbols-outlined">location_on</span> Thiruvananthapuram</span>
+            <span><span class="material-symbols-outlined">waves</span> Arabian Sea</span>
+        </div>
+        <p>
+            Varkala Beach is one of the most unique beaches in Kerala, famous for its stunning cliffs that rise directly
+            above the Arabian Sea. Unlike most beaches in India, Varkala offers a dramatic landscape where red laterite
+            cliffs meet golden sands.
+        </p>
+        <p>
+            The beach is a major spiritual and wellness destination, attracting visitors for yoga, meditation, and
+            Ayurvedic treatments. The nearby Papanasam Beach is believed to have holy waters where rituals are performed.
+        </p>
+    </div>
+</div>
+
+<!-- SHANKHUMUKHAM -->
+<div class="beach-card row g-0 align-items-center flex-lg-row-reverse">
+    <div class="col-lg-6">
+        <img src="https://www.keralatourism.org/images/destination/large/shankhumugham_beach_thiruvananthapuram20131031115511_224_1.jpg" alt="Shankhumukham Beach">
+    </div>
+    <div class="col-lg-6 beach-content">
+        <span class="badge-kerala">Sunset Point</span>
+        <h2>Shankhumukham Beach</h2>
+        <div class="beach-meta">
+            <span><span class="material-symbols-outlined">location_on</span> Trivandrum</span>
+            <span><span class="material-symbols-outlined">photo_camera</span> Scenic Views</span>
+        </div>
+        <p>
+            Located close to Trivandrum International Airport, Shankhumukham Beach is a favorite leisure destination for
+            locals and tourists alike. The beach is well known for its breathtaking sunsets and long stretches of open
+            shoreline.
+        </p>
+        <p>
+            One of the major attractions here is the massive sculpture of a reclining mermaid (Matsya Kanyaka),
+            symbolizing Kerala’s deep connection with the sea.
+        </p>
+    </div>
+</div>
+
+<!-- CHAVAKKAD -->
+<div class="beach-card row g-0 align-items-center">
+    <div class="col-lg-6">
+        <img src="https://pixahive.com/wp-content/uploads/2021/01/Chavakkad-Beach-268364-pixahive.jpg" alt="Chavakkad Beach">
+    </div>
+    <div class="col-lg-6 beach-content">
+        <span class="badge-kerala">River Meets Sea</span>
+        <h2>Chavakkad Beach</h2>
+        <div class="beach-meta">
+            <span><span class="material-symbols-outlined">location_on</span> Thrissur</span>
+            <span><span class="material-symbols-outlined">water</span> Azhimukham</span>
+        </div>
+        <p>
+            Chavakkad Beach is known for the beautiful Azhimukham, where the river meets the sea.
+            This natural phenomenon creates a picturesque landscape that attracts nature lovers and photographers.
+        </p>
+        <p>
+            The beach maintains a calm and peaceful atmosphere, making it ideal for travelers seeking solitude away
+            from crowded tourist spots.
+        </p>
+    </div>
+</div>
+
+<!-- VAKKAD & TIRUR PUZHA -->
+<div class="beach-card row g-0 align-items-center flex-lg-row-reverse">
+    <div class="col-lg-6">
+        <img src="https://images.unsplash.com/photo-1527786356703-4b100091cd2c?q=80&w=1200" alt="Vakkad Beach">
+    </div>
+    <div class="col-lg-6 beach-content">
+        <span class="badge-kerala">Untouched Beauty</span>
+        <h2>Vakkad Beach & Tirur Puzha</h2>
+        <div class="beach-meta">
+            <span><span class="material-symbols-outlined">location_on</span> Malappuram</span>
+            <span><span class="material-symbols-outlined">eco</span> Eco Tourism</span>
+        </div>
+        <p>
+            Vakkad Beach is a hidden coastal gem in Kerala, offering pristine sands and minimal tourist activity.
+            The Tirur Puzha river merging into the Arabian Sea creates a breathtaking and tranquil environment.
+        </p>
+        <p>
+            This destination is perfect for eco-tourism, bird watching, and travelers who appreciate untouched
+            natural landscapes.
+        </p>
+    </div>
+</div>
+
+</div>
+</section>
+
+<footer class="bg-dark text-white py-4 text-center">
+    <p class="mb-0 small opacity-75">
+        © 2026 Department of Tourism, Government of Kerala. All rights reserved.
+    </p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

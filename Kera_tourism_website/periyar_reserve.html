@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Periyar Tiger Reserve - Kerala Tourism</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-green: #13ec5b;
+            --bg-light: #f6f8f6;
+            --bg-dark: #102216;
+            --text-dark: #111813;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+        }
+
+        /* Custom Colors & Utilities */
+        .text-primary-green { color: var(--primary-green) !important; }
+        .bg-primary-green { background-color: var(--primary-green) !important; }
+        .bg-dark-kerala { background-color: var(--bg-dark) !important; }
+        
+        .btn-primary-kerala {
+            background-color: var(--primary-green);
+            color: var(--text-dark);
+            font-weight: 700;
+            border: none;
+            border-radius: 8px;
+            transition: transform 0.2s;
+        }
+        .btn-primary-kerala:hover { transform: scale(1.05); background-color: #11d452; }
+
+        /* Hero Styling - UPDATED FOR BROADER LOOK */
+        .hero-section {
+            min-height: 600px; /* Slightly taller */
+            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuBpcrbZa_9xf2wMlNiBHMf3TAl38SvvDuvZaM8fNeHcGoKOnyVYFDcP7W1naWg4z9rY2q6kA2QLJZWKuOF49q6Oy7nyMGxsVcL1k9QqCOsrhdZy_FNlT4U-sAsF4Y8W0pUh6UNCLwnApBlXnHq-JF1c4p9j_3Ii-0cNTNm4vIi0dXSXLWRtZkY952ubfr8jEx92QY635E6texK0jyXdk3DZoppIJhvGbvp6N7dVVJkx_FOXJWURB1iUTXEb_pHOjpkTM3t1rpmKIWg');
+            background-size: cover;
+            background-position: center;
+            border-radius: 24px; /* Slightly rounder corners like original */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 4rem 2rem; /* More internal padding for grand feel */
+        }
+
+        /* Gallery Hover Effects */
+        .gallery-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            height: 300px;
+        }
+        .gallery-card img {
+            transition: transform 0.7s ease;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+        .gallery-card:hover img { transform: scale(1.1); }
+        .gallery-overlay {
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 20px;
+        }
+        .gallery-text {
+            transition: all 0.3s ease;
+            transform: translateY(10px);
+            opacity: 0;
+        }
+        .gallery-card:hover .gallery-text {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Responsible Tourism Icons */
+        .guideline-icon {
+            font-size: 20px;
+            margin-top: 3px;
+        }
+
+
+                /* General Utilities */
+        .btn-primary-kerala {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            font-weight: 700;
+            border-radius: 10px;
+        }
+        .btn-accent-kerala {
+            background-color: var(--accent);
+            color: var(--primary);
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center fw-bold text-primary" href="#">
+                <span class="material-symbols-outlined me-2 fs-1">travel_explore</span> Kerala Tourism
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="destDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Destinations
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="destDropdown">
+                            <li><a class="dropdown-item" href="hills.html"><span class="material-symbols-outlined">terrain</span> Hills</a></li>
+                            <li><a class="dropdown-item" href="backwaters.html"><span class="material-symbols-outlined">waves</span> Backwaters</a></li>
+                            <li><a class="dropdown-item" href="waterfall.html"><span class="material-symbols-outlined">waterfall_chart</span> Waterfalls</a></li>
+                            <li><a class="dropdown-item" href="beaach.html"><span class="material-symbols-outlined">beach_access</span> Beaches</a></li>
+                            <li><a class="dropdown-item" href="wildlife.html"><span class="material-symbols-outlined">pets</span> Wildlife</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="experiences.html">Experiences</a></li>
+                    <li class="nav-item"><a class="nav-link" href="plan.html">Plan Your Trip</a></li>
+                    <li class="nav-item"><a class="nav-link" href="inndex1.html">Home</a></li>
+                </ul>
+                <button class="btn btn-primary-kerala" onclick="location.href='plan.html'">Book Now</button>
+            </div>
+        </div>
+    </nav>
+
+<div class="px-3 px-md-5 my-4"> 
+    <div class="hero-section">
+        <div>
+            <span class="text-primary-green fw-bold text-uppercase small tracking-wider mb-2 d-block">Welcome to Thekkady</span>
+            <h1 class="display-3 fw-black mb-3 text-white">The Kingdom of the Tiger</h1>
+            <p class="lead mb-4 mx-auto text-white-50 fw-medium" style="max-width: 700px;">Experience raw wilderness in the heart of the Western Ghats. A sanctuary for wildlife, a haven for nature lovers.</p>
+            <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+                <a href="periyar_visit.html" class="btn btn-primary-kerala btn-lg px-5">Plan Your Visit</a>
+                <button class="btn btn-outline-light btn-lg px-5" style="backdrop-filter: blur(5px);" data-bs-toggle="modal" data-bs-target="#periyarVideoModal">Watch Video</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="py-5">
+    <div class="container" style="max-width: 960px;">
+        <h2 class="display-6 fw-bold mb-4">Conservation & History</h2>
+        <p class="fs-5 text-muted mb-5">Established in 1950, the Periyar Tiger Reserve is one of the 27 tiger reserves in India. Nestled in the southern region of the Western Ghats, it is a biodiversity hotspot.</p>
+        
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm p-4 rounded-4">
+                    <span class="material-symbols-outlined text-primary-green fs-1 mb-3">eco</span>
+                    <h5 class="fw-bold">Biodiversity Hotspot</h5>
+                    <p class="small text-muted">Home to rare, endemic, and endangered flora and fauna thriving in the hills.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm p-4 rounded-4">
+                    <span class="material-symbols-outlined text-primary-green fs-1 mb-3">pets</span>
+                    <h5 class="fw-bold">Project Tiger</h5>
+                    <p class="small text-muted">Part of the national effort to protect and grow the Bengal Tiger population.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm p-4 rounded-4">
+                    <span class="material-symbols-outlined text-primary-green fs-1 mb-3">groups</span>
+                    <h5 class="fw-bold">Eco-Development</h5>
+                    <p class="small text-muted">Involving local communities in sustainable tourism practices.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5 bg-white">
+    <div class="container" style="max-width: 960px;">
+        <div class="d-flex justify-content-between align-items-end mb-4">
+            <div>
+                <h2 class="fw-bold">Wildlife of Periyar</h2>
+                <p class="text-muted mb-0">Encounter the majestic inhabitants of the reserve.</p>
+            </div>
+            <a href="#" class="text-primary-green fw-bold text-decoration-none small">View all species →</a>
+        </div>
+        
+        <div class="row g-3">
+            <div class="col-md-8">
+                <div class="gallery-card">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjIhvcJdYaAYnaCdPWfSnu3xLdC-lASsxZwiSMuENRRFXALUDVNkX31Gnn9dLwPb9Gr_pUn9hVOqFwVsR_rtNXnuQQRZolJJBFiVknV_mKSqvVF_x3z8aaj213DSMO1wfRtZjtLWJ3HMWCo3-UZQrQ_NQAX03CUa1XxMfCSQtJdRSMX3zZnQv6jHZ1HRmWsUg_LCENVkuBO_SA2rFv7ChKToEYgPo6IVxxzD1UvQYt_pEQo-IGOWOmb8YGq_jilCt-imQ8FxdskaQ" alt="Bengal Tiger">
+                    <div class="gallery-overlay">
+                        <h4 class="text-white fw-bold mb-0">Bengal Tiger</h4>
+                        <p class="gallery-text text-light small mb-0">The apex predator of Periyar</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="gallery-card">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhi5D5xE2huMAoOm-VDapJGV0GtZHnjBxUE-ncP_WRPNR_zkFI6CIYoFYDsUj9Z2nHHnOHmGcbNR1KLckiF8FPG6gVRnF4OzjIOYe1jlw7q51OG6J6GaA9o85QlXtb5z7GfwqHzrsjVZVT6tns_vuWHgER2ZFvx2SehqFLZ2Djcd1YOUsuA7MWEdziVoUlrNN1VQ0MqYzehsn7Rgnzm0Xx_QRU3Wq4cWg9hOPS9f7cV2KoexwKsiBXsiFJFauraHc3VPR3a-CpwBU" alt="Elephant">
+                    <div class="gallery-overlay">
+                        <h4 class="text-white fw-bold mb-0">Asian Elephant</h4>
+                        <p class="gallery-text text-light small mb-0">Often seen by the lake</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="gallery-card">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAE3CKtdKIPyi41s6p6X7LP447oRbG9dizMSGn9_THGFj65m0dJsSa0sEUCG5HLZYIWkZiH4UjUkkuGa-yJdbh6vqVhJ49VVDQ8g2lcohUFDb4sOno8uDzaNSweLj-in36b9WT9EJ7knZQZMMW7ZeqoqhVkf4Ubx7heNsiOxpEgayUZJjJP-LsRNiH5SyRs9BalNevHxs_8fQZh7xH_ivQn82vKE3rc61fCKC5Iemy56spYwxhS6JfGihPSw9S8ocX71QfHgJaqDo8" alt="Hornbill">
+                    <div class="gallery-overlay">
+                        <h4 class="text-white fw-bold mb-0">Great Hornbill</h4>
+                        <p class="gallery-text text-light small mb-0">Iconic bird of the canopy</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="gallery-card">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAw5M6v4d1vI2PPbpG2WzNPzAKircogbB3dMYeLqEnYwVTD2NgQvDHjbicKFVzdHUi9aj6RfjdHYmB1FcpiJoPXywvE34Ot-RQASeodCKtYC22JAVV5l_Pjwj2cWO-4DDtoDG-dzcYRYUoZfKDsEgchFid6ZolB37WBxDfZqAoS15dUZkZlQRQ9rSjG8ztLJ78sWH8p8n5uvHLsm5FEIE1x5SpiDOwjQP63yrlomXbZjX50PG3Ogfg_bY09iKiLPfJLmgAIEZvmWtQ" alt="Macaque">
+                    <div class="gallery-overlay">
+                        <h4 class="text-white fw-bold mb-0">Lion-Tailed Macaque</h4>
+                        <p class="gallery-text text-light small mb-0">Endemic and endangered primate</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container" style="max-width: 960px;">
+        <h2 class="fw-bold mb-4">Safari Experiences</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 border-0 rounded-4 overflow-hidden shadow-sm">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcWzGOpQNUAypWzO_Gno3ur9OBtajRl3woRlAqTSHigvf_W8UQ3CHaHRSLd_YS2sJYT-VI0_VvHYYKsSLpoO49kx0dFyNJCijWHK7ycPv1chW86GS6s6KVRkHzG1iz4QdRiEscnRXWCrcbuE8AnFrhAt5XpsitRlzSMY7Z8Bhhkr9912mL-V13gWR_wTcDNNUnNtwSxXKu-ZAwUmxrUkF1VsN536EFx3IT87GaosKH_PjUoajS70ozXc-0wcR7TOEvee54ZwiMyqU" class="card-img-top" alt="Boat Safari" style="height: 200px; object-fit: cover;">
+                    <div class="card-body p-4">
+                        <div class="text-primary-green small fw-bold text-uppercase mb-2">Popular</div>
+                        <h5 class="fw-bold">Boat Safari</h5>
+                        <p class="text-muted small">Watch wildlife come to the lake's edge to drink.</p>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#boatSafariModal" class="btn btn-outline-secondary btn-sm w-100 mt-auto">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 rounded-4 overflow-hidden shadow-sm">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOslh-lOFUIyRgxrZK00bmhmgsv3Px4N36klS-1AO_NUjl0oEdBaweRnIw7YK0GcK1zTORdWhBmcm5AyxSK829x-3cNb1XAiIHaI-AqAz5WfcKMOF_Ynt0p98uwMljEuKYDpG61UdLnfY6ECffu4aSKge3GtedR5jA_Eg-5wcfxYku-rxsAlgeVdTxXb6m3_TXYpYIMoNyUPJnXOYPa5BAsg_jGgbPZp6YH_i-Dvy6ueAgtFeOoSjF1w9RsM7AD-ArQ1qpVkiB1K8" class="card-img-top" alt="Jeep Safari" style="height: 200px; object-fit: cover;">
+                    <div class="card-body p-4">
+                        <div class="text-muted small fw-bold text-uppercase mb-2">Adventure</div>
+                        <h5 class="fw-bold">Jeep Safari</h5>
+                        <p class="text-muted small">Explore the Gavi forest range. Perfect for bird watchers.</p>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#jeepSafariModal" class="btn btn-outline-secondary btn-sm w-100 mt-auto">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 rounded-4 overflow-hidden shadow-sm">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfPGekEYwPdsQ0l_AaF_kJzyo6XDK_RHlvaR5r09A7kKNJOLKqKAiKibjN0PRUtQFRtrtQ2e12z7KXMoTcerGsAXxGtlYsJZ3diP7wWAV45nnS4oX1uuLzBab2dZ0Canyj-D3ME3wF2DckpnR3ZNp6XqD8eHgsjo7p4W9lwPfM9OTHZbQaYVxf4CmLQOYXiaNm_EHw3B34-wSLAUj0x7FTUEV9OE50ePlKvBjNENh_cZhlwLtaMwAi0_Ge8jbUk2uBOETz-TsWDpM" class="card-img-top" alt="Nature Walk" style="height: 200px; object-fit: cover;">
+                    <div class="card-body p-4">
+                        <div class="text-muted small fw-bold text-uppercase mb-2">Active</div>
+                        <h5 class="fw-bold">Nature Walks</h5>
+                        <p class="text-muted small">Guided trekking programs ranging from 3 hours to full day.</p>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#natureWalksModal" class="btn btn-outline-secondary btn-sm w-100 mt-auto">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5 bg-white border-top">
+    <div class="container" style="max-width: 960px;">
+        <div class="row g-5">
+            <div class="col-lg-6">
+                <h3 class="fw-bold d-flex align-items-center gap-2 mb-4">
+                    <span class="material-symbols-outlined text-primary-green">verified</span>
+                    Responsible Tourism
+                </h3>
+                <div class="d-flex flex-column gap-3">
+                    <div class="d-flex gap-3">
+                        <span class="material-symbols-outlined text-success guideline-icon">check_circle</span>
+                        <div><strong class="d-block small">Wear Earthy Tones</strong><span class="text-muted x-small">Green, brown, and khaki help you blend in.</span></div>
+                    </div>
+                    <div class="d-flex gap-3">
+                        <span class="material-symbols-outlined text-success guideline-icon">check_circle</span>
+                        <div><strong class="d-block small">Maintain Silence</strong><span class="text-muted x-small">Noise disturbs wildlife sightings.</span></div>
+                    </div>
+                    <div class="d-flex gap-3">
+                        <span class="material-symbols-outlined text-danger guideline-icon">cancel</span>
+                        <div><strong class="d-block small">No Plastics</strong><span class="text-muted x-small">The reserve is a strictly plastic-free zone.</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="bg-light p-4 rounded-4 border">
+                    <div class="d-flex justify-content-between mb-3">
+                        <div>
+                            <h5 class="fw-bold mb-0">Getting There</h5>
+                            <small class="text-muted">Thekkady, Idukki, Kerala</small>
+                        </div>
+                        <span class="material-symbols-outlined text-primary-green">near_me</span>
+                    </div>
+                    <div class="rounded-3 overflow-hidden mb-3" style="height: 150px;">
+                        <a href="https://www.google.com/maps?q=Periyar+Tiger+Reserve+Thekkady+Kerala" target="_blank" class="d-block w-100 h-100 bg-light d-flex flex-column align-items-center justify-content-center text-decoration-none">
+                            <span class="material-symbols-outlined text-primary-green fs-1">map</span>
+                            <div class="mt-2 fw-bold text-primary-green">View on Google Maps</div>
+                        </a>
+                    </div>
+                    <div class="row g-2">
+                        <div class="col-6"><div class="bg-white p-2 rounded border small text-center"><strong>Airport:</strong> Cochin (140km)</div></div>
+                        <div class="col-6"><div class="bg-white p-2 rounded border small text-center"><strong>Rail:</strong> Kottayam (114km)</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<main class="container my-5">
+    <h1 class="display-4 fw-bold">Periyar Tiger Reserve</h1>
+    <p class="lead">Periyar Tiger Reserve, located in Thekkady, is a renowned wildlife sanctuary in Kerala. It is home to a diverse range of flora and fauna, including the majestic Bengal tiger.</p>
+
+    <section class="my-4">
+        <h2 class="h4">Wildlife</h2>
+        <ul>
+            <li>Tigers</li>
+            <li>Elephants</li>
+            <li>Indian Bison</li>
+            <li>Various bird species</li>
+        </ul>
+    </section>
+
+    <section class="my-4">
+        <h2 class="h4">Activities</h2>
+        <p>Enjoy bamboo rafting, nature walks, and jeep safaris to explore the rich biodiversity of the reserve.</p>
+    </section>
+</main>
+
+<footer class="bg-dark-kerala text-white py-5">
+    <div class="container" style="max-width: 960px;">
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="d-flex align-items-center gap-2 mb-3">
+                    <span class="material-symbols-outlined text-primary-green">forest</span>
+                    <h4 class="mb-0 fw-bold">Kerala Tourism</h4>
+                </div>
+                <p class="text-white-50 small" style="max-width: 300px;">Experience God's Own Country. From the backwaters of Alleppey to the wild hills of Thekkady.</p>
+            </div>
+            <div class="col-6 col-md-3">
+                <h6 class="text-uppercase small fw-bold text-white-50 mb-3">Explore</h6>
+                <ul class="list-unstyled small d-flex flex-column gap-2">
+                    <li><a href="destinations.html" class="text-white text-decoration-none">Destinations</a></li>
+                    <li><a href="#" class="text-white text-decoration-none">Safari Booking</a></li>
+                    <li><a href="#" class="text-white text-decoration-none">Packages</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md-3">
+                <h6 class="text-uppercase small fw-bold text-white-50 mb-3">Support</h6>
+                <ul class="list-unstyled small d-flex flex-column gap-2">
+                    <li><a href="#" class="text-white text-decoration-none">Contact Us</a></li>
+                    <li><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
+                    <li><a href="#" class="text-white text-decoration-none">Terms</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr class="my-5 border-white-50 opacity-25">
+        <div class="text-center text-white-50 x-small">
+            © 2023 Department of Tourism, Government of Kerala. All rights reserved.
+        </div>
+    </div>
+</footer>
+
+<!-- Boat Safari Modal -->
+<div class="modal fade" id="boatSafariModal" tabindex="-1" aria-labelledby="boatSafariModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="boatSafariModalLabel">Boat Safari at Periyar Tiger Reserve</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcWzGOpQNUAypWzO_Gno3ur9OBtajRl3woRlAqTSHigvf_W8UQ3CHaHRSLd_YS2sJYT-VI0_VvHYYKsSLpoO49kx0dFyNJCijWHK7ycPv1chW86GS6s6KVRkHzG1iz4QdRiEscnRXWCrcbuE8AnFrhAt5XpsitRlzSMY7Z8Bhhkr9912mL-V13gWR_wTcDNNUnNtwSxXKu-ZAwUmxrUkF1VsN536EFx3IT87GaosKH_PjUoajS70ozXc-0wcR7TOEvee54ZwiMyqU" class="img-fluid rounded" alt="Boat Safari">
+          </div>
+          <div class="col-md-6">
+            <p><strong>Boat Safari</strong> is one of the most popular activities at Periyar Tiger Reserve. Glide silently across the Periyar Lake in a motorized boat to observe wildlife in their natural habitat.</p>
+            <h6>Highlights:</h6>
+            <ul>
+              <li>Spot elephants, bison, and deer drinking at the water's edge</li>
+              <li>Chance to see tigers and leopards in the wild</li>
+              <li>Birdwatching opportunities with over 260 species</li>
+              <li>Guided tours with experienced naturalists</li>
+              <li>Sunset cruises for a magical experience</li>
+            </ul>
+            <p>Boats operate from 7 AM to 5 PM, with tickets available at the reserve entrance. Best time is early morning or late afternoon for wildlife sightings.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Jeep Safari Modal -->
+<div class="modal fade" id="jeepSafariModal" tabindex="-1" aria-labelledby="jeepSafariModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="jeepSafariModalLabel">Jeep Safari at Periyar Tiger Reserve</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOslh-lOFUIyRgxrZK00bmhmgsv3Px4N36klS-1AO_NUjl0oEdBaweRnIw7YK0GcK1zTORdWhBmcm5AyxSK829x-3cNb1XAiIHaI-AqAz5WfcKMOF_Ynt0p98uwMljEuKYDpG61UdLnfY6ECffu4aSKge3GtedR5jA_Eg-5wcfxYku-rxsAlgeVdTxXb6m3_TXYpYIMoNyUPJnXOYPa5BAsg_jGgbPZp6YH_i-Dvy6ueAgtFeOoSjF1w9RsM7AD-ArQ1qpVkiB1K8" class="img-fluid rounded" alt="Jeep Safari">
+          </div>
+          <div class="col-md-6">
+            <p><strong>Jeep Safari</strong> offers an adventurous way to explore the Gavi forest range within Periyar Tiger Reserve. This guided tour takes you through dense forests and grasslands, providing opportunities to spot wildlife and birds in their natural habitat.</p>
+            <h6>Highlights:</h6>
+            <ul>
+              <li>Guided tours through Gavi forest range</li>
+              <li>Chance to see elephants, bison, and deer</li>
+              <li>Excellent for birdwatching with diverse species</li>
+              <li>Educational insights from experienced guides</li>
+              <li>Safe and regulated wildlife viewing</li>
+            </ul>
+            <p>Safaris operate from 7 AM to 5 PM, with advance booking recommended. Wear comfortable clothing and bring binoculars for the best experience.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Nature Walks Modal -->
+<div class="modal fade" id="natureWalksModal" tabindex="-1" aria-labelledby="natureWalksModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="natureWalksModalLabel">Nature Walks at Periyar Tiger Reserve</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfPGekEYwPdsQ0l_AaF_kJzyo6XDK_RHlvaR5r09A7kKNJOLKqKAiKibjN0PRUtQFRtrtQ2e12z7KXMoTcerGsAXxGtlYsJZ3diP7wWAV45nnS4oX1uuLzBab2dZ0Canyj-D3ME3wF2DckpnR3ZNp6XqD8eHgsjo7p4W9lwPfM9OTHZbQaYVxf4CmLQOYXiaNm_EHw3B34-wSLAUj0x7FTUEV9OE50ePlKvBjNENh_cZhlwLtaMwAi0_Ge8jbUk2uBOETz-TsWDpM" class="img-fluid rounded" alt="Nature Walks">
+          </div>
+          <div class="col-md-6">
+            <p><strong>Nature Walks</strong> offer an intimate way to explore the biodiversity of Periyar Tiger Reserve on foot. Guided by experienced naturalists, these walks take you through lush forests, grasslands, and along the lake shore.</p>
+            <h6>Highlights:</h6>
+            <ul>
+              <li>Guided trekking programs from 3 hours to full day</li>
+              <li>Close encounters with flora and fauna</li>
+              <li>Learn about medicinal plants and wildlife behavior</li>
+              <li>Photography opportunities in natural settings</li>
+              <li>Educational insights from expert guides</li>
+            </ul>
+            <p>Walks are available throughout the day, with early morning and late afternoon being ideal for wildlife sightings. Comfortable walking shoes and insect repellent are recommended.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Video Modal -->
+<div class="modal fade" id="periyarVideoModal" tabindex="-1" aria-labelledby="periyarVideoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content bg-dark">
+            <div class="modal-header border-0">
+                <h5 class="modal-title text-white" id="periyarVideoModalLabel">Periyar Reserve — Video</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-0">
+                <video id="periyarVideo" controls style="width:100%; max-height:75vh; background:black;">
+                    <source src="IMAGES/tiger_reserve.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    (function(){
+        var modalEl = document.getElementById('periyarVideoModal');
+        var videoEl = document.getElementById('periyarVideo');
+        if(modalEl && videoEl){
+            modalEl.addEventListener('shown.bs.modal', function () { try{ videoEl.play(); }catch(e){} });
+            modalEl.addEventListener('hide.bs.modal', function () { try{ videoEl.pause(); videoEl.currentTime = 0; }catch(e){} });
+        }
+    })();
+</script>
+</body>
+</html>

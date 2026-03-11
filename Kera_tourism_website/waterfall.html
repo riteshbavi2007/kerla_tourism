@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Waterfalls of Kerala | Kerala Tourism</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+<style>
+:root{
+    --primary:#006141;
+    --accent:#00b4a0;
+    --light:#f4faf8;
+}
+
+body{
+    font-family:'Plus Jakarta Sans',sans-serif;
+    background:var(--light);
+    color:#122c24;
+}
+
+        /* Navbar Customization */
+        .navbar {
+            background: rgba(255, 255, 255, 0.9) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #f0f5f3;
+            padding: 1rem 0;
+        }
+        .nav-link {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #101816 !important;
+            margin: 0 15px;
+        }
+        .nav-link:hover { color: var(--primary) !important; }
+
+        /* --- New Dropdown Styles (Added to match your theme) --- */
+        .dropdown-menu {
+            border: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            padding: 0.5rem;
+            background: white;
+        }
+        .dropdown-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+            padding: 0.7rem 1.2rem;
+            border-radius: 10px;
+            color: #101816;
+        }
+        .dropdown-item:hover {
+            background-color: var(--bg-light);
+            color: var(--primary);
+        }
+        .dropdown-item .material-symbols-outlined {
+            font-size: 20px;
+            color: var(--primary);
+        }
+
+/* Hero */
+.waterfall-hero{
+    height:80vh;
+    background:
+    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.65)),
+    url('https://b3681537.smushcdn.com/3681537/wp-content/uploads/2024/11/athirappilly-waterfalls.jpg?lossy=2&strip=1&webp=1');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    color:#fff;
+}
+
+/* Section */
+.fall-section{
+    padding:100px 0;
+}
+
+.fall-block{
+    background:#fff;
+    border-radius:38px;
+    overflow:hidden;
+    box-shadow:0 35px 80px rgba(0,0,0,.12);
+}
+
+.fall-img img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.fall-content{
+    padding:45px;
+}
+
+.fall-content h2{
+    font-weight:800;
+    color:var(--primary);
+}
+
+.fall-meta{
+    display:flex;
+    gap:25px;
+    font-size:.9rem;
+    color:#6c757d;
+    margin:15px 0 25px;
+}
+
+.fall-meta span{
+    display:flex;
+    align-items:center;
+    gap:6px;
+}
+
+.fall-content p{
+    line-height:1.9;
+    margin-bottom:15px;
+    color:#3a5a50;
+}
+
+.flow-divider{
+    height:120px;
+    background:
+    linear-gradient(to bottom, transparent, #cfeae3, transparent);
+}
+
+footer{
+    background:#0c2e23;
+    color:#d4efe7;
+}
+
+        /* General Utilities */
+        .btn-primary-kerala {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            font-weight: 700;
+            border-radius: 10px;
+        }
+        .btn-accent-kerala {
+            background-color: var(--accent);
+            color: var(--primary);
+            font-weight: 700;
+        }
+</style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center fw-bold text-primary" href="#">
+                <span class="material-symbols-outlined me-2 fs-1">travel_explore</span> Kerala Tourism
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="destDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Destinations
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="destDropdown">
+                            <li><a class="dropdown-item" href="hills.html"><span class="material-symbols-outlined">terrain</span> Hills</a></li>
+                            <li><a class="dropdown-item" href="backwaters.html"><span class="material-symbols-outlined">waves</span> Backwaters</a></li>
+                            <li><a class="dropdown-item" href="waterfall.html"><span class="material-symbols-outlined">waterfall_chart</span> Waterfall</a></li>
+                            <li><a class="dropdown-item" href="beaach.html"><span class="material-symbols-outlined">beach_access</span> Beaches</a></li>
+                            <li><a class="dropdown-item" href="wildlife.html"><span class="material-symbols-outlined">pets</span> Wild Life</a></li>
+                            <li><a class="dropdown-item" href="island.html"><span class="material-symbols-outlined">island</span> Islands</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="experiences.html">Experiences</a></li>
+                    <li class="nav-item"><a class="nav-link" href="plan.html">Plan Your Trip</a></li>
+                    <li class="nav-item"><a class="nav-link" href="inndex1.html">Home</a></li>
+                </ul>
+                <button class="btn btn-primary-kerala" onclick="location.href='plan.html'">Book Now</button>
+            </div>
+        </div>
+    </nav>
+
+<!-- HERO -->
+<header class="waterfall-hero text-center">
+    <div class="container">
+        <h1 class="display-2 fw-black mb-3">Waterfalls of Kerala</h1>
+        <p class="fs-4 opacity-90">
+            Nature’s cascading wonders hidden in the Western Ghats 🌿
+        </p>
+    </div>
+</header>
+
+<!-- CONTENT -->
+<section class="fall-section">
+<div class="container">
+
+<!-- ATHIRAPPILLY & VAZHACHAL -->
+<div class="fall-block row g-0 mb-5">
+    <div class="col-lg-6 fall-img">
+        <img src="https://irisholidays.com/keralatourism/wp-content/uploads/2019/01/Athirapally_Water_falls.jpg" alt="Athirappilly Falls">
+    </div>
+    <div class="col-lg-6 fall-content">
+        <h2>Athirappilly & Vazhachal Falls</h2>
+        <div class="fall-meta">
+            <span><span class="material-symbols-outlined">waterfall_chart</span> Tallest in Kerala</span>
+            <span><span class="material-symbols-outlined">forest</span> Sholayar Forests</span>
+        </div>
+        <p>
+            Athirappilly Falls, often called the “Niagara of India,” is the largest and most spectacular
+            waterfall in Kerala. Located on the Chalakudy River, it plunges from a height of about
+            80 feet, creating a breathtaking sight especially during the monsoon season.
+        </p>
+        <p>
+            Just a few kilometers away lies Vazhachal Falls, surrounded by dense tropical forests.
+            While less steep, Vazhachal offers a serene environment with continuous flowing cascades
+            and mist-filled surroundings.
+        </p>
+        <p>
+            Together, these waterfalls form one of Kerala’s most iconic eco-tourism destinations,
+            attracting nature lovers, photographers, and wildlife enthusiasts.
+        </p>
+    </div>
+</div>
+
+<div class="flow-divider"></div>
+
+<!-- THUSHARAGIRI -->
+<div class="fall-block row g-0 mb-5 flex-lg-row-reverse">
+    <div class="col-lg-6 fall-img">
+        <img src="https://i0.wp.com/aravindgundumane.com/wp-content/uploads/2015/05/DSC_9582.jpg?resize=640%2C424&is-pending-load=1" alt="Thusharagiri Falls">
+    </div>
+    <div class="col-lg-6 fall-content">
+        <h2>Thusharagiri Waterfalls</h2>
+        <div class="fall-meta">
+            <span><span class="material-symbols-outlined">hiking</span> Trekking Trails</span>
+            <span><span class="material-symbols-outlined">mountain_flag</span> Western Ghats</span>
+        </div>
+        <p>
+            Thusharagiri Waterfalls is a group of cascading waterfalls located in Kozhikode district,
+            surrounded by forested hills and rocky terrain. The name “Thusharagiri” means “snow-capped
+            mountains,” referring to the mist formed by the falling water.
+        </p>
+        <p>
+            The waterfalls originate from the Chalippuzha River and are divided into multiple stages,
+            making the area ideal for trekking and adventure tourism.
+        </p>
+        <p>
+            The scenic trails, fresh mountain air, and untouched greenery make Thusharagiri a favorite
+            destination for trekkers and eco-tourists.
+        </p>
+    </div>
+</div>
+
+<div class="flow-divider"></div>
+
+<!-- PALARUVI -->
+<div class="fall-block row g-0 mb-5">
+    <div class="col-lg-6 fall-img">
+        <img src="https://www.keralatourism.org/images/eco-tourism/trekking_thumb/trekking-trails/palaruvi-DSC01497_28072018122315.jpg" alt="Palaruvi Falls">
+    </div>
+    <div class="col-lg-6 fall-content">
+        <h2>Palaruvi Waterfalls</h2>
+        <div class="fall-meta">
+            <span><span class="material-symbols-outlined">spa</span> Medicinal Waters</span>
+            <span><span class="material-symbols-outlined">water</span> Natural Pool</span>
+        </div>
+        <p>
+            Palaruvi, meaning “Stream of Milk,” is one of the most picturesque waterfalls in Kerala.
+            Located in Kollam district, it cascades down from a height of around 300 feet.
+        </p>
+        <p>
+            The waterfall is believed to have medicinal properties due to the herbs and roots present
+            in the surrounding forest. Visitors often take a dip in the natural pool formed at the base.
+        </p>
+        <p>
+            Palaruvi is easily accessible and offers a refreshing experience, making it a popular
+            destination for families and nature lovers.
+        </p>
+    </div>
+</div>
+
+<div class="flow-divider"></div>
+
+<!-- MANKAYAM -->
+<div class="fall-block row g-0">
+    <div class="col-lg-6 fall-img">
+        <img src="https://www.shutterstock.com/image-photo/waterfalls-taken-mankayam-ponmudi-kerala-600w-1010605531.jpg" alt="Mankayam Ecotourism">
+    </div>
+    <div class="col-lg-6 fall-content">
+        <h2>Mankayam Ecotourism</h2>
+        <div class="fall-meta">
+            <span><span class="material-symbols-outlined">eco</span> Ecotourism Zone</span>
+            <span><span class="material-symbols-outlined">pets</span> Wildlife</span>
+        </div>
+        <p>
+            Mankayam is an emerging ecotourism destination located near Thiruvananthapuram, known for
+            its series of waterfalls hidden deep within forested hills.
+        </p>
+        <p>
+            The area is rich in biodiversity and offers guided trekking experiences through dense forests,
+            river crossings, and natural rock pools.
+        </p>
+        <p>
+            Mankayam focuses on sustainable tourism, allowing visitors to experience untouched nature
+            while ensuring minimal environmental impact.
+        </p>
+    </div>
+</div>
+
+</div>
+</section>
+
+<footer class="py-4 text-center">
+    <p class="mb-0 small">
+        © 2026 Department of Tourism, Government of Kerala. All rights reserved.
+    </p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

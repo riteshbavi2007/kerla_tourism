@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wildlife of Kerala | Kerala Tourism</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+<style>
+:root{
+    --primary:#005c3a;
+    --accent:#3bb78f;
+    --light:#f2f8f5;
+}
+
+body{
+    font-family:'Plus Jakarta Sans',sans-serif;
+    background:var(--light);
+    color:#122c24;
+}
+
+        /* Navbar Customization */
+        .navbar {
+            background: rgba(255, 255, 255, 0.9) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #f0f5f3;
+            padding: 1rem 0;
+        }
+        .nav-link {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #101816 !important;
+            margin: 0 15px;
+        }
+        .nav-link:hover { color: var(--primary) !important; }
+
+        /* --- New Dropdown Styles (Added to match your theme) --- */
+        .dropdown-menu {
+            border: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            padding: 0.5rem;
+            background: white;
+        }
+        .dropdown-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+            padding: 0.7rem 1.2rem;
+            border-radius: 10px;
+            color: #101816;
+        }
+        .dropdown-item:hover {
+            background-color: var(--bg-light);
+            color: var(--primary);
+        }
+        .dropdown-item .material-symbols-outlined {
+            font-size: 20px;
+            color: var(--primary);
+        }
+
+/* HERO */
+.wild-hero{
+    height:80vh;
+    background:
+    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.75)),
+    url('https://img.veenaworld.com/wp-content/uploads/2018/06/Wayanad1.jpg');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    color:#fff;
+}
+
+/* SECTION */
+.wild-section{
+    padding:100px 0;
+}
+
+.wild-block{
+    background:#fff;
+    border-radius:42px;
+    overflow:hidden;
+    box-shadow:0 45px 90px rgba(0,0,0,.14);
+}
+
+.wild-img img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.wild-content{
+    padding:50px;
+}
+
+.wild-content h2{
+    font-weight:800;
+    color:var(--primary);
+}
+
+.wild-meta{
+    display:flex;
+    gap:25px;
+    margin:15px 0 25px;
+    font-size:.9rem;
+    color:#6c757d;
+}
+
+.wild-meta span{
+    display:flex;
+    align-items:center;
+    gap:6px;
+}
+
+.wild-content p{
+    line-height:1.9;
+    color:#3a5a50;
+    margin-bottom:15px;
+}
+
+.jungle-divider{
+    height:120px;
+    background:linear-gradient(to bottom, transparent, #d3ebe2, transparent);
+}
+
+footer{
+    background:#0c2e23;
+    color:#d4efe7;
+}
+
+
+        /* General Utilities */
+        .btn-primary-kerala {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            font-weight: 700;
+            border-radius: 10px;
+        }
+        .btn-accent-kerala {
+            background-color: var(--accent);
+            color: var(--primary);
+            font-weight: 700;
+        }
+</style>
+</head>
+
+<body>
+
+
+    <nav class="navbar navbar-expand-lg fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center fw-bold text-primary" href="#">
+                <span class="material-symbols-outlined me-2 fs-1">travel_explore</span> Kerala Tourism
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="destDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Destinations
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="destDropdown">
+                            <li><a class="dropdown-item" href="hills.html"><span class="material-symbols-outlined">terrain</span> Hills</a></li>
+                            <li><a class="dropdown-item" href="backwaters.html"><span class="material-symbols-outlined">waves</span> Backwaters</a></li>
+                            <li><a class="dropdown-item" href="waterfall.html"><span class="material-symbols-outlined">waterfall_chart</span> Waterfall</a></li>
+                            <li><a class="dropdown-item" href="beaach.html"><span class="material-symbols-outlined">beach_access</span> Beaches</a></li>
+                            <li><a class="dropdown-item" href="wildlife.html"><span class="material-symbols-outlined">pets</span> Wild Life</a></li>
+                            <li><a class="dropdown-item" href="island.html"><span class="material-symbols-outlined">island</span> Islands</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="experiences.html">Experiences</a></li>
+                    <li class="nav-item"><a class="nav-link" href="plan.html">Plan Your Trip</a></li>
+                    <li class="nav-item"><a class="nav-link" href="inndex1.html">Home</a></li>
+                </ul>
+                <button class="btn btn-primary-kerala" onclick="location.href='plan.html'">Book Now</button>
+            </div>
+        </div>
+    </nav>
+
+<!-- HERO -->
+<header class="wild-hero text-center">
+    <div class="container">
+        <h1 class="display-2 fw-black mb-3">Wildlife of Kerala</h1>
+        <p class="fs-4 opacity-90">
+            Explore the untouched forests of the Western Ghats 🌿
+        </p>
+    </div>
+</header>
+
+<section class="wild-section">
+<div class="container">
+
+<!-- WAYANAD -->
+<div class="wild-block row g-0 mb-5">
+    <div class="col-lg-6 wild-img">
+        <img src="https://images.unsplash.com/photo-1543877087-ebf71fde2be1?q=80&w=1200" alt="Wayanad Wildlife Sanctuary">
+    </div>
+    <div class="col-lg-6 wild-content">
+        <h2>Wayanad Wildlife Sanctuary</h2>
+        <div class="wild-meta">
+            <span><span class="material-symbols-outlined">pets</span> Elephants & Deer</span>
+            <span><span class="material-symbols-outlined">forest</span> Nilgiri Biosphere</span>
+        </div>
+        <p>
+            Wayanad Wildlife Sanctuary forms an important part of the Nilgiri Biosphere Reserve and
+            is one of the most biologically rich wildlife regions in Kerala.
+        </p>
+        <p>
+            The sanctuary is home to elephants, tigers, leopards, deer, wild dogs, and over
+            200 species of birds, making it a paradise for wildlife enthusiasts.
+        </p>
+        <p>
+            Jeep safaris through Muthanga and Tholpetty ranges offer visitors a chance to experience
+            wildlife in its natural habitat.
+        </p>
+    </div>
+</div>
+
+<div class="jungle-divider"></div>
+
+<!-- SILENT VALLEY -->
+<div class="wild-block row g-0 mb-5 flex-lg-row-reverse">
+    <div class="col-lg-6 wild-img">
+        <img src="https://roamingowls.com/wp-content/uploads/Silent-valley-national-park.jpg" alt="Silent Valley National Park">
+    </div>
+    <div class="col-lg-6 wild-content">
+        <h2>Silent Valley National Park</h2>
+        <div class="wild-meta">
+            <span><span class="material-symbols-outlined">eco</span> Pristine Rainforest</span>
+            <span><span class="material-symbols-outlined">public</span> Western Ghats</span>
+        </div>
+        <p>
+            Silent Valley National Park is one of the last undisturbed tropical evergreen forests
+            in India, located in Palakkad district.
+        </p>
+        <p>
+            The park is famous for its unique ecosystem, rare medicinal plants, and endangered
+            species such as the lion-tailed macaque.
+        </p>
+        <p>
+            Entry is strictly regulated to preserve the ecosystem, offering visitors a rare
+            opportunity to experience untouched wilderness.
+        </p>
+    </div>
+</div>
+
+<div class="jungle-divider"></div>
+
+<!-- ERAVIKULAM -->
+<div class="wild-block row g-0 mb-5">
+    <div class="col-lg-6 wild-img">
+        <img src="https://planashleygo.com/wp-content/uploads/2024/04/Eravikulam-National-Park-Munnar.jpg" alt="Eravikulam National Park">
+    </div>
+    <div class="col-lg-6 wild-content">
+        <h2>Eravikulam National Park</h2>
+        <div class="wild-meta">
+            <span><span class="material-symbols-outlined">landscape</span> High Altitude Park</span>
+            <span><span class="material-symbols-outlined">pets</span> Nilgiri Tahr</span>
+        </div>
+        <p>
+            Eravikulam National Park is located in the high ranges of Idukki district and is
+            best known as the natural habitat of the endangered Nilgiri Tahr.
+        </p>
+        <p>
+            Rolling grasslands, misty hills, and seasonal blooming of Neelakurinji flowers
+            make this park visually spectacular.
+        </p>
+        <p>
+            The park also offers panoramic views of Anamudi Peak, the highest peak in South India.
+        </p>
+    </div>
+</div>
+
+<div class="jungle-divider"></div>
+
+<!-- PARAMBIKULAM -->
+<div class="wild-block row g-0">
+    <div class="col-lg-6 wild-img">
+        <img src="https://localbagpackers.com/wp-content/uploads/2025/02/Parambikulam-Forest-Cover-Image.jpg" alt="Parambikulam Tiger Reserve">
+    </div>
+    <div class="col-lg-6 wild-content">
+        <h2>Parambikulam Tiger Reserve</h2>
+        <div class="wild-meta">
+            <span><span class="material-symbols-outlined">pets</span> Tiger Reserve</span>
+            <span><span class="material-symbols-outlined">water</span> Reservoirs</span>
+        </div>
+        <p>
+            Parambikulam Tiger Reserve, located in Palakkad district, is one of the most
+            well-protected wildlife areas in South India.
+        </p>
+        <p>
+            The reserve is known for its sustainable eco-tourism initiatives and is home
+            to tigers, leopards, sloth bears, and diverse bird species.
+        </p>
+        <p>
+            Visitors can enjoy guided safaris, trekking, and stay programs inside the forest
+            while learning about conservation efforts.
+        </p>
+    </div>
+</div>
+
+</div>
+</section>
+
+<footer class="py-4 text-center">
+    <p class="mb-0 small">
+        © 2026 Department of Tourism, Government of Kerala. All rights reserved.
+    </p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

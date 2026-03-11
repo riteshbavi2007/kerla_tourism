@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kavvayi Backwaters - Kerala Tourism</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- Custom Variables & Theme Setup --- */
+        :root {
+            --primary: #11d473;
+            --primary-dark: #0ea65a;
+            --accent-gold: #d4af37;
+            --bg-light: #f6f8f7;
+            --bg-dark: #102219;
+            --text-main: #111814;
+            --text-muted: #618975;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            color: var(--text-main);
+            background-color: white;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4, .serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .italic-serif {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+        }
+
+        /* --- Navigation --- */
+        .navbar-glass {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--text-main) !important;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--primary) !important;
+        }
+
+        /* --- Destinations Dropdown Styling --- */
+        .dropdown-menu {
+            border: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            padding: 0.5rem;
+            background: white;
+        }
+        .dropdown-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+            padding: 0.7rem 1.2rem;
+            border-radius: 10px;
+            color: var(--text-main);
+        }
+        .dropdown-item:hover {
+            background-color: var(--bg-light);
+            color: var(--primary);
+        }
+        .dropdown-item .material-symbols-outlined {
+            font-size: 20px;
+            color: var(--primary);
+        }
+
+        /* --- Hero Section --- */
+        .hero-section {
+            height: 85vh;
+            min-height: 600px;
+            background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)), 
+                        url("https://lh3.googleusercontent.com/aida-public/AB6AXuC_gkd4z1dT606N371j7F3UhvKpm7bg9dP2RQJH8zO53KbUl0-2XwaHW1rW08C90m5r0zCe6urzyi-luqCQbk7IOWAoILRlzpAgBQbjsCLqmjYN4MB4AsIYLM0gD6yV-oT57EolLK6iT-jBcbq3TTrFXT0jgwCqfL_tTKujyKDyOARKaVuklTc0g8rWn471ueL_ZoW548GNeGgSyB76VGWyBVs39dwhm4xE8c6n4G6-cOkHUwGLBJPGIbLRghc7vzJu8-dSSO1iw2k");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-badge {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255,255,255,0.3);
+            letter-spacing: 2px;
+            font-size: 0.7rem;
+            font-weight: 700;
+        }
+
+        /* --- Components --- */
+        .btn-primary-custom {
+            background-color: var(--primary);
+            border: none;
+            color: white;
+            font-weight: 700;
+            padding: 0.8rem 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary-custom:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(17, 212, 115, 0.2);
+            color: white;
+        }
+
+        .section-tag {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--primary);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1.5px;
+        }
+
+        .section-tag::before {
+            content: "";
+            width: 35px;
+            height: 1px;
+            background-color: var(--primary);
+        }
+
+        .icon-circle {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(17, 212, 115, 0.1);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* --- Experience Cards & Images --- */
+        .image-zoom-container {
+            overflow: hidden;
+            border-radius: 1rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .zoom-img {
+            transition: transform 0.7s ease;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .zoom-img:hover {
+            transform: scale(1.08);
+        }
+
+        .experience-card {
+            position: relative;
+            border-radius: 1rem;
+            overflow: hidden;
+            cursor: pointer;
+            aspect-ratio: 3/4;
+        }
+
+        .experience-card .overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(transparent 50%, rgba(0,0,0,0.8));
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 2rem;
+            color: white;
+        }
+
+        /* --- Staggered Effect for Grid --- */
+        @media (min-width: 992px) {
+            .staggered-col {
+                margin-top: -3rem;
+            }
+        }
+
+        /* --- Map Styling --- */
+        .map-wrapper {
+            background-color: #e5e7eb;
+            height: 400px;
+            border-radius: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .map-pin {
+            width: 16px;
+            height: 16px;
+            background: var(--primary);
+            border: 3px solid white;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            box-shadow: 0 0 0 10px rgba(17, 212, 115, 0.2);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(17, 212, 115, 0.4); }
+            100% { box-shadow: 0 0 0 15px rgba(17, 212, 115, 0); }
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--bg-dark);
+            color: rgba(255,255,255,0.7);
+        }
+
+                /* General Utilities */
+        .btn-primary-kerala {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            font-weight: 700;
+            border-radius: 10px;
+        }
+        .btn-accent-kerala {
+            background-color: var(--accent);
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center fw-bold text-primary" href="#">
+                <span class="material-symbols-outlined me-2 fs-1">travel_explore</span> Kerala Tourism
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="destDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Destinations
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="destDropdown">
+                            <li><a class="dropdown-item" href="hills.html"><span class="material-symbols-outlined">terrain</span> Hills</a></li>
+                            <li><a class="dropdown-item" href="backwaters.html"><span class="material-symbols-outlined">waves</span> Backwaters</a></li>
+                            <li><a class="dropdown-item" href="waterfall.html"><span class="material-symbols-outlined">waterfall_chart</span> Waterfalls</a></li>
+                            <li><a class="dropdown-item" href="beaach.html"><span class="material-symbols-outlined">beach_access</span> Beaches</a></li>
+                            <li><a class="dropdown-item" href="wildlife.html"><span class="material-symbols-outlined">pets</span> Wildlife</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="experiences.html">Experiences</a></li>
+                    <li class="nav-item"><a class="nav-link" href="plan.html">Plan Your Trip</a></li>
+                    <li class="nav-item"><a class="nav-link" href="inndex1.html">Home</a></li>
+                </ul>
+                <button class="btn btn-primary-kerala" onclick="location.href='plan.html'">Book Now</button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section text-center">
+        <div class="container py-5">
+            <span class="badge hero-badge rounded-pill px-3 py-2 text-uppercase mb-4">North Kerala</span>
+            <h1 class="display-1 fw-bolder mb-3">Kavvayi</h1>
+            <p class="h3 fw-light italic-serif mb-5 opacity-90 mx-auto" style="max-width: 700px;">
+                Kerala's Hidden Emerald. The third largest backwaters in God's Own Country.
+            </p>
+                <div class="d-flex justify-content-center gap-3 flex-column flex-sm-row mt-4">
+                <a href="kavvayi_cruises.html" class="btn btn-primary-custom btn-lg rounded-pill px-5 shadow-lg">Explore Cruises</a>
+                <button class="btn btn-outline-light btn-lg rounded-pill px-5" data-bs-toggle="modal" data-bs-target="#kavvayiVideoModal">Watch Video</button>
+            </div>
+        </div>
+        <div class="position-absolute bottom-0 mb-4 animate-bounce">
+            <span class="material-symbols-outlined fs-2 opacity-50">keyboard_arrow_down</span>
+        </div>
+    </header>
+
+    <section class="py-5 my-lg-5">
+        <div class="container py-lg-5">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <div class="section-tag mb-3">The Ecosystem</div>
+                    <h2 class="display-4 fw-bold mb-4">A Unique Biodiversity <span class="text-primary italic-serif">Hotspot</span></h2>
+                    <p class="lead text-muted mb-5">Kavvayi is more than just water; it is a thriving ecosystem of mangroves and islands. Home to rare flora and fauna, the backwaters act as a crucial ecological buffer.</p>
+                    
+                    <div class="row g-4">
+                        <div class="col-sm-6">
+                            <div class="icon-circle mb-3"><span class="material-symbols-outlined">forest</span></div>
+                            <h4 class="h5 fw-bold mb-2">Mangrove Forests</h4>
+                            <p class="small text-muted mb-0">Dense green cover protecting the coastline and islands.</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="icon-circle mb-3"><span class="material-symbols-outlined">flutter_dash</span></div>
+                            <h4 class="h5 fw-bold mb-2">Bird Sanctuary</h4>
+                            <p class="small text-muted mb-0">A vital habitat for migratory and rare native birds.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="image-zoom-container">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuANWWN-M885hvHGr-ezJPWCdr0cSjSRyyKFqV0KprKvx47b1sbJhgYFzXsJYCFsS0bThq-CH6arscvsseK3tn-VsuMPUjn-mIaamLoECngOaVhKy2GqzYjGKdT-l2uB8LchCdfFZbe1ufWBpeZqtuuT960nzf20uzddvhbSEsRwne_-hq3Codmd6Wb49YLoa_BigxUlqPTE_AqQ4n_Kr-0GWUbAaSgC5jCCrvwJ9CnV7Uo9Mn1vgkM2VVPRPAqGWG_58Rw7UVPWu80" alt="Mangroves" class="zoom-img img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-light">
+        <div class="container py-lg-5">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6 order-2 order-lg-1">
+                    <div class="image-zoom-container">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSJBwU0CZpXwUPah2e0hBbGmbywfKxHHcJn0eWqaxJbRuWpZETInOX9CkGEFKwP9S2sc3QgBt18h0T3QytiZsfUfuTGBery41W2N1TIxKowKtRRFB34jPpXBBlRGi_WtAxB_cxcsBwk3oaHh80qsl7Znbr-1I6UDBLL2iOAvUffc9O80qfhS9A7D7tR1zjm7azU_FWaWgrYexsEj0U9o7UD8XvfbpLznXzTzYQdv9ynLidM0kBvKOzRhTuTO2VxgASCnh0M2K83-Y" alt="Houseboat" class="zoom-img img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-6 order-1 order-lg-2">
+                    <div class="section-tag mb-3">Experiences</div>
+                    <h2 class="display-4 fw-bold mb-4">Drift in <span class="text-primary italic-serif">Luxury</span></h2>
+                    <p class="lead text-muted mb-4">Glide through calm emerald waters on a traditional Kettuvallam. Our curated houseboat experiences offer silence that speaks to the soul.</p>
+                    <ul class="list-unstyled mb-5">
+                        <li class="d-flex align-items-start gap-3 mb-4">
+                            <span class="material-symbols-outlined text-primary">restaurant</span>
+                            <div>
+                                <h5 class="fw-bold mb-1 serif">Authentic Cuisine</h5>
+                                <p class="small text-muted mb-0">Fresh catch prepared with local spices onboard.</p>
+                            </div>
+                        </li>
+                        <li class="d-flex align-items-start gap-3">
+                            <span class="material-symbols-outlined text-primary">bed</span>
+                            <div>
+                                <h5 class="fw-bold mb-1 serif">Premium Stays</h5>
+                                <p class="small text-muted mb-0">Air-conditioned bedrooms with luxury ensuite amenities.</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <a href="kavvayi_cruises.html" class="text-dark fw-bold text-decoration-none border-bottom border-primary border-2 pb-1">
+                        View Cruise Packages →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container py-lg-5">
+            <div class="text-center mb-5 pb-lg-5">
+                <h2 class="display-5 fw-bold">Beyond the Backwaters</h2>
+                <p class="text-muted">Immerse yourself in the rhythm of local life.</p>
+            </div>
+            <div class="row g-4 align-items-start">
+                <div class="col-md-4">
+                    <div class="experience-card shadow-sm">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9mShPRPKFaW5Tt5tryykUlpB6ATFIVXqJKV8DFiqatuhGYUV8Tobi19Ch8frvbd0Ajo3zGvKzklE5dtwxRHQ_pBq5coXAjxc_wZprMxWMEccJQ1qutt1WaC1SP8R0tceICRb3eicEXnGA9b5eq4VtfXSiBRIp2OLXwzWSOOy3MFf6p_M8yYWfqPMC7QSjJPmhConZKY2zsMj5CF_terTS73ZyZx9hY5dSBTR2BRvgN-hi_rgn3Na3rQx71GaAZQTrZaSNfWltl30" alt="Village" class="zoom-img">
+                        <div class="overlay">
+                            <span class="material-symbols-outlined text-primary mb-2">sailing</span>
+                            <h3 class="h4 serif">Village Life</h3>
+                        </div>
+                    </div>
+                    <p class="text-muted small mt-3 px-2">Witness traditional coir making and sustainable fishing methods.</p>
+                </div>
+                <div class="col-md-4 staggered-col">
+                    <div class="experience-card shadow-lg">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB25q6m36LR--Rg9TbNOD7gJukDXKtjqAHqaiSOKJuOpYbrNbb4gbwKKBg670fj3fr5fRnt5bXKyOd69v3eHu8BbeKBDIN1BPTYYl0G6qfeW8uwNPaJ2Qnda3rnQeYu6AC6lYBX5TYZ5NuxGTZqv5Ablu4CPcSNdAc5iuJPzUj9DpalcNfhtKAJUtzXvhaqaAmnKhG7nh-mO8UZNAYfhain7vNV9FbstoFNaBlQdGC50OTXyGKpzh4qrygv1JDIbUZKB3QTWxchw0I" alt="Birdwatching" class="zoom-img">
+                        <div class="overlay">
+                            <span class="material-symbols-outlined text-primary mb-2">visibility</span>
+                            <h3 class="h4 serif">Birdwatching</h3>
+                        </div>
+                    </div>
+                    <p class="text-muted small mt-3 px-2">Spot migratory birds and rare species in their natural habitat.</p>
+                </div>
+                <div class="col-md-4">
+                    <div class="experience-card shadow-sm">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1IADCyrrJblgAG9JrnXCVUCCxIAP_ewLhZ2OKyKNrwl5Z5Kl6KWyHpjBm93eL71hvNJbv8ACcL_aB1HpKFHt2js08CnBbykDqmJJ-OTnq_10euRviMTcXj-5iESVyKpVdzUgPNK1_llNMLywfk9pGXtBiauk56mzeR9eZGONIQPWtlE6bad_BQWeIjeGc1nqbwM9MpckzUj8TSFH0hbdADJA8UdlDT-2VUh_bvI-ArjjZsEaFRhgAmjSlP1QbFcwZcoADMbEL7-0" alt="Temple" class="zoom-img">
+                        <div class="overlay">
+                            <span class="material-symbols-outlined text-primary mb-2">temple_hindu</span>
+                            <h3 class="h4 serif">Temple Culture</h3>
+                        </div>
+                    </div>
+                    <p class="text-muted small mt-3 px-2">Visit ancient temples like Sree Matsyavataramoorthy, rich in history.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-light border-top border-bottom">
+        <div class="container text-center py-5">
+            <span class="material-symbols-outlined display-5 text-primary mb-4">format_quote</span>
+            <blockquote class="display-6 italic-serif mb-4 mx-auto" style="max-width: 800px;">
+                "The water here doesn't just flow; it breathes. Kavvayi is the soul of Northern Kerala, untouched and eternal."
+            </blockquote>
+            <cite class="small fw-bold text-uppercase tracking-widest text-muted">— Travel & Leisure India</cite>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container py-lg-5">
+            <div class="row g-5 align-items-center border rounded-4 p-4 p-lg-5 bg-white shadow-sm">
+                <div class="col-lg-6">
+                    <h2 class="display-6 fw-bold mb-4">Getting There</h2>
+                    <p class="text-muted mb-5">Kavvayi is located near Payyanur in the Kannur district. It is easily accessible by road and rail.</p>
+                    
+                    <div class="d-grid gap-4">
+                        <div class="d-flex gap-4">
+                            <div class="icon-circle bg-light flex-shrink-0"><span class="material-symbols-outlined text-dark">train</span></div>
+                            <div><h6 class="fw-bold mb-1">By Train</h6><p class="small text-muted mb-0">Nearest station: Payyanur (3 km away).</p></div>
+                        </div>
+                        <div class="d-flex gap-4">
+                            <div class="icon-circle bg-light flex-shrink-0"><span class="material-symbols-outlined text-dark">flight</span></div>
+                            <div><h6 class="fw-bold mb-1">By Air</h6><p class="small text-muted mb-0">Kannur International Airport (CNN) is 56 km away.</p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="map-wrapper">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyfkqEr3vx_uW0VypgICe59ZAGlpasUCpf3PsPFKAcLS5oshF1mD9COGIgCATXr-uWQAVRVihf0JxYjMVwJmxB34jrKBrLMOjvWb2PZe39yaTjUC9BlPsZ4pWmxkjeFsEtSk3hWfHRcxfyFAWDAhNmYj_G47h18YanvpNV7wQbSI-yvcehLtiVphl32B4ligv57hx4CC3NDgRvWyPq6CWyWzKwgq1pkiT94UYKuWZSkwEa0tbPsDMdh1y_tImJ6mVMDuPIySVBMkY" alt="Map" class="w-100 h-100 object-fit-cover opacity-50 grayscale">
+                        <div class="map-pin"></div>
+                        <div class="position-absolute translate-middle top-50 start-50 mt-4 bg-white px-3 py-1 rounded-pill shadow-sm small fw-bold">Kavvayi</div>
+                        <a href="https://www.google.com/maps?q=Kavvayi+Backwaters+Kerala" target="_blank" class="position-absolute bottom-0 start-50 translate-middle-x mb-3 btn btn-primary-kerala btn-sm px-3 py-2 rounded-pill shadow">
+                            <span class="material-symbols-outlined fs-6 me-1">map</span>View on Google Maps
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container my-5">
+        <h1 class="display-4 fw-bold">Kavvayi Backwaters</h1>
+        <p class="lead">Kavvayi Backwaters, located in the northern part of Kerala, is a tranquil and less-explored destination. It is ideal for eco-tourism and offers a serene escape from the hustle and bustle of city life.</p>
+
+        <section class="my-4">
+            <h2 class="h4">Highlights</h2>
+            <ul>
+                <li>Houseboat cruises</li>
+                <li>Scenic islands</li>
+                <li>Rich biodiversity</li>
+            </ul>
+        </section>
+
+        <section class="my-4">
+            <h2 class="h4">Activities</h2>
+            <p>Explore the backwaters on a houseboat, enjoy bird watching, and visit the nearby islands for a unique experience.</p>
+        </section>
+    </main>
+
+    <!-- Video Modal -->
+    <div class="modal fade" id="kavvayiVideoModal" tabindex="-1" aria-labelledby="kavvayiVideoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content bg-dark">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title text-white" id="kavvayiVideoModalLabel">Kavvayi — Video</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <video id="kavvayiVideo" controls style="width:100%; max-height:75vh; background:black;">
+                        <source src="IMAGES/kavvyi.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="pt-5 pb-4">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <h5 class="text-white fw-bold mb-4 d-flex align-items-center gap-2">
+                        <span class="material-symbols-outlined text-primary">sailing</span> Kerala Tourism
+                    </h5>
+                    <p class="small">Official tourism website of Kerala's Department of Tourism. God's Own Country welcomes you.</p>
+                </div>
+                <div class="col-md-4 col-lg-2">
+                    <h6 class="text-white fw-bold mb-4">Explore</h6>
+                    <ul class="list-unstyled small d-grid gap-2">
+                        <li>Destinations</li>
+                        <li>Experiences</li>
+                        <li>Plan Trip</li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-lg-3">
+                    <h6 class="text-white fw-bold mb-4">Contact</h6>
+                    <p class="small mb-2">info@keralatourism.org</p>
+                    <p class="small">+91 471 2321132</p>
+                </div>
+                <div class="col-md-4 col-lg-3">
+                    <h6 class="text-white fw-bold mb-4">Newsletter</h6>
+                    <div class="input-group">
+                        <input type="text" class="form-control bg-white bg-opacity-10 border-0 text-white" placeholder="Email Address">
+                        <button class="btn btn-primary-custom px-3">
+                            <span class="material-symbols-outlined fs-6">arrow_forward</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-5 border-white border-opacity-10">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <p class="small mb-0">© 2023 Department of Tourism, Kerala.</p>
+                <div class="d-flex gap-4 small">
+                    <span>Facebook</span>
+                    <span>Instagram</span>
+                    <span>YouTube</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        (function(){
+            var modalEl = document.getElementById('kavvayiVideoModal');
+            var videoEl = document.getElementById('kavvayiVideo');
+            if(modalEl && videoEl){
+                modalEl.addEventListener('shown.bs.modal', function () { try{ videoEl.play(); }catch(e){} });
+                modalEl.addEventListener('hide.bs.modal', function () { try{ videoEl.pause(); videoEl.currentTime = 0; }catch(e){} });
+            }
+        })();
+    </script>
+</body>
+</html>

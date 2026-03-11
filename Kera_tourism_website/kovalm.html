@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kovalam - Kerala Tourism | Bootstrap Edition</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #11d473;
+            --bg-light: #f6f8f7;
+            --bg-dark: #102219;
+            --text-main: #111814;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--text-main);
+            background-color: var(--bg-light);
+        }
+
+        /* Glass Navbar */
+        .navbar-custom {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e0e8e4;
+        }
+
+        .nav-link:hover { color: var(--primary-color) !important; }
+
+        /* Hero Section */
+        .hero-section {
+            height: 85vh;
+            background: linear-gradient(rgba(16, 34, 25, 0.3), rgba(16, 34, 25, 0.6)), 
+                        url("https://lh3.googleusercontent.com/aida-public/AB6AXuAicGR8uUmEoR-ObtOvgxbtvBqmG0rByU3K2R1p432cF9fCdGCuHByCeCezQUCNVSzV8x5qBt_NMjqPzpXLMNfTT6ROG2bwGi4fj3ToOk1pWh-B6i91CwkySHpJg8TsBpTReiZ9ZnUbvdELvgi43G2Ll5utmhd-XK2RtKniibTDiAuUp_bumWD7ZCH6QWHIIZAgQfZ-KJx0lnIZoomTV9dibFhKVtr3ohyyjVQGNHwYnXOE3-y6XNQddSHUhKLx3GpXKp6xKU8yzTY");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .btn-primary-custom {
+            background-color: var(--primary-color);
+            border: none;
+            color: var(--text-main);
+            font-weight: 700;
+            padding: 0.75rem 2rem;
+            transition: transform 0.2s;
+        }
+
+        .btn-primary-custom:hover {
+            background-color: #0fb360;
+            transform: scale(1.05);
+        }
+
+        /* Staggered Images */
+        .img-staggered {
+            border-radius: 1rem;
+            box-shadow: 0 1rem 3rem rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .img-staggered:hover { transform: translateY(-10px); }
+
+        /* Wellness Cards */
+        .wellness-card {
+            border: none;
+            border-radius: 1rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background: white;
+        }
+        .wellness-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 1rem 2rem rgba(0,0,0,0.08);
+        }
+
+        /* Split Section Hover Effects */
+        .split-card {
+            height: 500px;
+            position: relative;
+            overflow: hidden;
+        }
+        .split-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s;
+        }
+        .split-card:hover img { transform: scale(1.1); }
+        
+        .split-overlay {
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            padding: 2rem;
+        }
+
+        .material-symbols-outlined {
+            vertical-align: middle;
+        }
+
+                /* General Utilities */
+        .btn-primary-kerala {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            font-weight: 700;
+            border-radius: 10px;
+        }
+        .btn-accent-kerala {
+            background-color: var(--accent);
+            color: var(--primary);
+            font-weight: 700;
+        }
+        
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center fw-bold text-primary" href="#">
+                <span class="material-symbols-outlined me-2 fs-1">travel_explore</span> Kerala Tourism
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="destDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Destinations
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="destDropdown">
+                            <li><a class="dropdown-item" href="hills.html"><span class="material-symbols-outlined">terrain</span> Hills</a></li>
+                            <li><a class="dropdown-item" href="backwaters.html"><span class="material-symbols-outlined">waves</span> Backwaters</a></li>
+                            <li><a class="dropdown-item" href="waterfall.html"><span class="material-symbols-outlined">waterfall_chart</span> Waterfalls</a></li>
+                            <li><a class="dropdown-item" href="beaach.html"><span class="material-symbols-outlined">beach_access</span> Beaches</a></li>
+                            <li><a class="dropdown-item" href="wildlife.html"><span class="material-symbols-outlined">pets</span> Wildlife</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="experiences.html">Experiences</a></li>
+                    <li class="nav-item"><a class="nav-link" href="plan.html">Plan Your Trip</a></li>
+                    <li class="nav-item"><a class="nav-link" href="inndex1.html">Home</a></li>
+                </ul>
+                <button class="btn btn-primary-kerala" onclick="location.href='plan.html'">Book Now</button>
+            </div>
+        </div>
+    </nav>
+
+<section class="hero-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <span class="badge rounded-pill bg-white bg-opacity-25 border border-white border-opacity-25 mb-4 py-2 px-3 text-uppercase tracking-widest">Paradise of the South</span>
+                <h1 class="display-2 fw-bold mb-4">Kovalam: Where the Sea Meets Soul</h1>
+                <p class="lead mb-5 px-lg-5 opacity-90">Discover the crescent beaches, the iconic lighthouse, and the serene soul of Kerala's coast.</p>
+                <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+                    <a href="kovalam_coast.html" class="btn btn-primary-custom btn-lg rounded-3">Explore the Coast</a>
+                    <button class="btn btn-white btn-lg bg-white fw-bold rounded-3 d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#kovalamVideoModal">
+                        <span class="material-symbols-outlined me-2 text-success">play_circle</span> Watch Video
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5 mt-5 text-center">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <span class="text-success fw-bold text-uppercase small tracking-widest">The Coastline</span>
+                <h2 class="display-5 fw-bold mt-2">The Three Crescent Beaches</h2>
+                <p class="text-muted fs-5 mt-3">Kovalam has been a favorite haunt of tourists since the 1930s, featuring three adjacent crescent beaches separated by rocky outcroppings.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+                <div class="d-flex align-items-center gap-2 text-success fw-bold mb-3">
+                    <span class="material-symbols-outlined">flag</span>
+                    <span class="text-uppercase small tracking-widest">Most Popular</span>
+                </div>
+                <h3 class="display-5 fw-bold mb-4">Lighthouse Beach</h3>
+                <p class="text-muted fs-5 mb-4">The largest of the three, known for its 30-meter high lighthouse offering panoramic views of the Arabian Sea. It's the pulsing heart of Kovalam.</p>
+                
+                <div class="row g-4 mb-4">
+                    <div class="col-sm-6 d-flex gap-3">
+                        <div class="bg-success bg-opacity-10 p-2 rounded-circle text-success h-fit">
+                            <span class="material-symbols-outlined">visibility</span>
+                        </div>
+                        <div><h6 class="fw-bold mb-1">Panoramic Views</h6><p class="small text-muted mb-0">142 steps to the top.</p></div>
+                    </div>
+                    <div class="col-sm-6 d-flex gap-3">
+                        <div class="bg-success bg-opacity-10 p-2 rounded-circle text-success h-fit">
+                            <span class="material-symbols-outlined">restaurant</span>
+                        </div>
+                        <div><h6 class="fw-bold mb-1">Seafood Dining</h6><p class="small text-muted mb-0">Fresh catch daily.</p></div>
+                    </div>
+                </div>
+                <a href="https://www.google.com/maps?q=Kovalam+Kerala" target="_blank" class="btn btn-dark btn-lg px-4">View on Map</a>
+            </div>
+            <div class="col-lg-6">
+                <div class="row g-3">
+                    <div class="col-6 pt-5">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7zLxAVpdB6kpioTMtHN3olByYFZKyYVbLxRhHixs1d8roOhmWyGwS5pu-hQHQQ2bE9v9raUrtmA2yu000xurUuSIHzbJ8Z5Hc6ON7z4DdHZ5e40KOK17WB20IPtNoeDZCvtlrUS2LKLlDk3k5a_UQ7xhDeitDpBzwgjfddef0BEtIfgF3VLrgNAjVqEXyrJschuf5zhuo6FkuTijcUxvcRRjio0C4FEMwY-xMkQE8yRSNbzvmrqcW8oXBmLcI4vlCIUy4uuDqRmo" class="img-fluid img-staggered" alt="Lighthouse">
+                    </div>
+                    <div class="col-6">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzZxeWM4ygVkTnAIfS0dfdnCwRjN38vWKGTqVBwUzZbKqpVctAT27xGlrwWqGJC1lr3ucu3xBTGoi09OX-COulTlXixjXL5z13nDQNP51BXBArun_SfNOSyUGrwEKpe3d-rR1lY8EYhNR6rQTQ_B4KlP5vQlFyh3ck05QGmhFSAy304cEEWmtvA68lg_Ang5V1-QtFIKYZfYup38MgIkhfKx1TBjhG5PqoDZhrX8CpPlRBINNvx_c4HO3Duf0cxANDJ4UOkfenu2w" class="img-fluid img-staggered" alt="Beach sunset">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5 bg-white border-top border-bottom">
+    <div class="container py-4">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-end mb-5">
+            <div class="max-w-600">
+                <span class="text-success fw-bold text-uppercase small">Wellness & Rejuvenation</span>
+                <h2 class="display-6 fw-bold">Ayurvedic Healing</h2>
+            </div>
+            <a href="#" class="text-success fw-bold text-decoration-none d-flex align-items-center gap-1">
+                View All Resorts <span class="material-symbols-outlined">arrow_forward</span>
+            </a>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-4">
+                <div class="card wellness-card h-100 shadow-sm">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiOZGCpdkW0_4FF_QcCcMQedKVb0aZu2wd2A35FgmzQEqU7JBgt9-9VxR8-SXjU6uVaN0fDrWBPkEeq8GdW3MAVtYfHy4_gD5mLwMODrtkGG52AUAakUMtiBoadvifyZSFYpI45cfTOJ2gk8U4kfKa1G93Zk6HTy1glWtJVgMIGqU0LGxN2MG1JB904atL1Orh7P-YdWC_iuXayn0TYLN-ggRGXiIyb2MWBq8iAhR5hh8OWeqVkfUPaeT-VJn1H3B4OWEjz5_tfIU" class="card-img-top" style="height: 250px; object-fit: cover;" alt="Spa">
+                    <div class="card-body p-4">
+                        <h5 class="fw-bold">Somatheeram Resort</h5>
+                        <p class="text-muted small">The world's first Ayurvedic resort, offering yoga and holistic meditation.</p>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#somatheeramModal" class="btn btn-link p-0 text-success fw-bold text-decoration-none">Learn more</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card wellness-card h-100 shadow-sm">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFfpz0G9mRq83ppVXvuMfNZqLpIKiS6q0UKmVQxNlHc6E4blzCpwoETrkcxVNi6I66Xe_YNU72cwiXKljDsjd9t0iZGngBoqDtBTvcQno0gzpJEaJzQxtzEQyb-35z1dClAt6FXKB5XD9FfOlVn-NKiYrVeVZxjoEMud8N8TbX-pds2CQv3C-LhbU-ivz5P84Aj5Kr4vYgbd1qpaacTuCuL0pkuicEJfrTjmhfBUyZr9MeKmvN8fBMSUsBpgmK2hgUxkhidHW8HvA" class="card-img-top" style="height: 250px; object-fit: cover;" alt="Luxury">
+                    <div class="card-body p-4">
+                        <h5 class="fw-bold">Niraamaya Retreats</h5>
+                        <p class="text-muted small">Perched on a cliff edge, flanking secluded beaches with breathtaking views.</p>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#niraamayaModal" class="btn btn-link p-0 text-success fw-bold text-decoration-none">Learn more</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card wellness-card h-100 shadow-sm">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWloAPj7verP9-tPpS2yQfr6ULMhs-c-QJC023KcHAwtaWUuXOosLNYHBExvTOoQuk9APX5NMg9x17RtljSOCcDB75LpE3lIyuFW5SyF0oXaT6xHL5QTwOcDTT_NSyieOUbtTYFFy5Tid4xZIOMijIRzbT8Pe0WaoQ8moCpRFVpKc9A-oUdVEupM6H57jVG9jE4AEG-GPRFSgvQjjCRxzG7ZmmcJ3fjCLmSuBsaQVpn8RPmsz-f6CUD7Sp-abEfPsnpNu1aJGf6CE" class="card-img-top" style="height: 250px; object-fit: cover;" alt="Authentic">
+                    <div class="card-body p-4">
+                        <h5 class="fw-bold">Uday Samudra</h5>
+                        <p class="text-muted small">A 5-star leisure beach hotel preserving the natural beauty of the region.</p>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#udayModal" class="btn btn-link p-0 text-success fw-bold text-decoration-none">Learn more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<main class="container my-5">
+    <h1 class="display-4 fw-bold">Kovalam</h1>
+    <p class="lead">Kovalam is a famous beach destination in Kerala, known for its crescent-shaped beaches and vibrant coastal life. It is a perfect spot for relaxation and water sports.</p>
+
+    <section class="my-4">
+        <h2 class="h4">Beaches</h2>
+        <ul>
+            <li>Lighthouse Beach</li>
+            <li>Hawah Beach</li>
+            <li>Samudra Beach</li>
+        </ul>
+    </section>
+
+    <section class="my-4">
+        <h2 class="h4">Activities</h2>
+        <p>Enjoy sunbathing, swimming, and surfing. Don't miss the stunning sunset views from the lighthouse.</p>
+    </section>
+</main>
+
+<footer class="bg-dark text-white pt-5 pb-3">
+    <div class="container py-4">
+        <div class="row g-5">
+            <div class="col-lg-4">
+                <h4 class="fw-bold d-flex align-items-center gap-2 mb-4">
+                    <span class="material-symbols-outlined text-success">travel_explore</span> Kerala Tourism
+                </h4>
+                <p class="text-white-50">Experience God's Own Country. From the serene backwaters to the misty hills.</p>
+            </div>
+            <div class="col-6 col-lg-2">
+                <h6 class="fw-bold mb-4">Destinations</h6>
+                <ul class="list-unstyled text-white-50 small d-grid gap-2">
+                    <li>Munnar</li>
+                    <li>Alleppey</li>
+                    <li>Kovalam</li>
+                </ul>
+            </div>
+            <div class="col-lg-4">
+                <h6 class="fw-bold mb-4">Stay Updated</h6>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Your email">
+                    <button class="btn btn-success">Subscribe</button>
+                </div>
+            </div>
+        </div>
+        <hr class="mt-5 border-secondary">
+        <p class="text-center text-white-50 small mt-4">© 2023 Kerala Tourism. All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- Somatheeram Modal -->
+<div class="modal fade" id="somatheeramModal" tabindex="-1" aria-labelledby="somatheeramModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="somatheeramModalLabel">Somatheeram Ayurvedic Resort</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiOZGCpdkW0_4FF_QcCcMQedKVb0aZu2wd2A35FgmzQEqU7JBgt9-9VxR8-SXjU6uVaN0fDrWBPkEeq8GdW3MAVtYfHy4_gD5mLwMODrtkGG52AUAakUMtiBoadvifyZSFYpI45cfTOJ2gk8U4kfKa1G93Zk6HTy1glWtJVgMIGqU0LGxN2MG1JB904atL1Orh7P-YdWC_iuXayn0TYLN-ggRGXiIyb2MWBq8iAhR5hh8OWeqVkfUPaeT-VJn1H3B4OWEjz5_tfIU" class="img-fluid rounded" alt="Somatheeram Resort">
+          </div>
+          <div class="col-md-6">
+            <p><strong>Somatheeram Ayurvedic Health Resort</strong> is the world's first Ayurvedic resort, established in 1984. Located near the pristine beaches of Kovalam, it offers a unique blend of traditional Ayurvedic treatments and modern wellness practices.</p>
+            <h6>Key Features:</h6>
+            <ul>
+              <li>Authentic Panchakarma treatments</li>
+              <li>Yoga and meditation sessions</li>
+              <li>Holistic healing programs</li>
+              <li>Serene beachside location</li>
+              <li>Personalized wellness consultations</li>
+            </ul>
+            <p>Experience rejuvenation in a tranquil environment that promotes physical, mental, and spiritual well-being.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Niraamaya Modal -->
+<div class="modal fade" id="niraamayaModal" tabindex="-1" aria-labelledby="niraamayaModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="niraamayaModalLabel">Niraamaya Retreats</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFfpz0G9mRq83ppVXvuMfNZqLpIKiS6q0UKmVQxNlHc6E4blzCpwoETrkcxVNi6I66Xe_YNU72cwiXKljDsjd9t0iZGngBoqDtBTvcQno0gzpJEaJzQxtzEQyb-35z1dClAt6FXKB5XD9FfOlVn-NKiYrVeVZxjoEMud8N8TbX-pds2CQv3C-LhbU-ivz5P84Aj5Kr4vYgbd1qpaacTuCuL0pkuicEJfrTjmhfBUyZr9MeKmvN8fBMSUsBpgmK2hgUxkhidHW8HvA" class="img-fluid rounded" alt="Niraamaya Retreats">
+          </div>
+          <div class="col-md-6">
+            <p><strong>Niraamaya Retreats</strong> is a luxurious Ayurvedic wellness retreat located on a cliff edge overlooking the Arabian Sea in Kovalam. It offers a serene escape with breathtaking views of secluded beaches and the ocean.</p>
+            <h6>Key Features:</h6>
+            <ul>
+              <li>Cliffside location with panoramic sea views</li>
+              <li>Traditional Ayurvedic therapies</li>
+              <li>Yoga and meditation on the beach</li>
+              <li>Private villas and suites</li>
+              <li>Organic cuisine and wellness programs</li>
+            </ul>
+            <p>Indulge in holistic healing amidst nature's splendor, where every moment is designed for rejuvenation and tranquility.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Uday Modal -->
+<div class="modal fade" id="udayModal" tabindex="-1" aria-labelledby="udayModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="udayModalLabel">Uday Samudra Beach Hotel</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWloAPj7verP9-tPpS2yQfr6ULMhs-c-QJC023KcHAwtaWUuXOosLNYHBExvTOoQuk9APX5NMg9x17RtljSOCcDB75LpE3lIyuFW5SyF0oXaT6xHL5QTwOcDTT_NSyieOUbtTYFFy5Tid4xZIOMijIRzbT8Pe0WaoQ8moCpRFVpKc9A-oUdVEupM6H57jVG9jE4AEG-GPRFSgvQjjCRxzG7ZmmcJ3fjCLmSuBsaQVpn8RPmsz-f6CUD7Sp-abEfPsnpNu1aJGf6CE" class="img-fluid rounded" alt="Uday Samudra">
+          </div>
+          <div class="col-md-6">
+            <p><strong>Uday Samudra Beach Hotel</strong> is a 5-star luxury beachfront hotel in Kovalam, dedicated to preserving the natural beauty of the region while offering world-class hospitality.</p>
+            <h6>Key Features:</h6>
+            <ul>
+              <li>Direct beach access with private stretch</li>
+              <li>Spacious rooms with sea views</li>
+              <li>Multiple dining options with local cuisine</li>
+              <li>Spa and wellness center</li>
+              <li>Swimming pool and recreational activities</li>
+            </ul>
+            <p>Experience the perfect blend of luxury and nature, where every stay contributes to environmental conservation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Video Modal -->
+<div class="modal fade" id="kovalamVideoModal" tabindex="-1" aria-labelledby="kovalamVideoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content bg-dark">
+            <div class="modal-header border-0">
+                <h5 class="modal-title text-white" id="kovalamVideoModalLabel">Kovalam — Video</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-0">
+                <video id="kovalamVideo" controls style="width:100%; max-height:75vh; background:black;">
+                    <source src="IMAGES/Kovalm.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    (function(){
+        var modalEl = document.getElementById('kovalamVideoModal');
+        var videoEl = document.getElementById('kovalamVideo');
+        if(modalEl && videoEl){
+            modalEl.addEventListener('shown.bs.modal', function () { try{ videoEl.play(); }catch(e){} });
+            modalEl.addEventListener('hide.bs.modal', function () { try{ videoEl.pause(); videoEl.currentTime = 0; }catch(e){} });
+        }
+    })();
+</script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kumarakom Bird Sanctuary | Kumarakom</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+    <style>
+        :root{--primary:#006141;--bg:#f5f8f7}
+        body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:#101816}
+        .hero{height:40vh;min-height:240px;background:linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.4)),url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=2000&auto=format&fit=crop');background-size:cover;background-position:center;display:flex;align-items:center;color:#fff}
+        .card-list{background:#fff;border-radius:12px;padding:1.25rem;box-shadow:0 8px 24px rgba(0,0,0,0.06)}
+        .badge-accent{background:var(--primary);color:#fff;padding:.25rem .6rem;border-radius:8px}
+
+        
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center fw-bold text-primary" href="#">
+                <span class="material-symbols-outlined me-2 fs-1">travel_explore</span> Kerala Tourism
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="destDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Destinations
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="destDropdown">
+                            <li><a class="dropdown-item" href="hills.html"><span class="material-symbols-outlined">terrain</span> Hills</a></li>
+                            <li><a class="dropdown-item" href="backwaters.html"><span class="material-symbols-outlined">waves</span> Backwaters</a></li>
+                            <li><a class="dropdown-item" href="waterfall.html"><span class="material-symbols-outlined">waterfall_chart</span> Waterfalls</a></li>
+                            <li><a class="dropdown-item" href="beaach.html"><span class="material-symbols-outlined">beach_access</span> Beaches</a></li>
+                            <li><a class="dropdown-item" href="wildlife.html"><span class="material-symbols-outlined">pets</span> Wildlife</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="experiences.html">Experiences</a></li>
+                    <li class="nav-item"><a class="nav-link" href="plan.html">Plan Your Trip</a></li>
+                    <li class="nav-item"><a class="nav-link" href="inndex1.html">Home</a></li>
+                </ul>
+                <button class="btn btn-primary-kerala" onclick="location.href='plan.html'">Book Now</button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero text-center">
+        <div class="container">
+            <h1 class="display-5 fw-bold">Kumarakom Bird Sanctuary</h1>
+            <p class="lead opacity-90">A peaceful haven on the banks of Vembanad Lake — a top birding spot in Kerala.</p>
+        </div>
+    </header>
+
+    <main class="container my-5 py-5">
+        <div class="row g-4">
+            <div class="col-lg-8">
+                <div class="card-list mb-4">
+                    <h2 class="fw-bold">About the Sanctuary</h2>
+                    <p class="text-muted">Kumarakom Bird Sanctuary covers about 14 acres of freshwater marshland and is home to many resident and migratory birds. Peak season for migratory birds is from November to February, when species like Siberian storks, herons, kingfishers, and teals visit the lake and reedbeds.</p>
+                    <h5 class="mt-3">Top species to spot</h5>
+                    <ul>
+                        <li>Black-headed Ibis</li>
+                        <li>Whiskered Tern</li>
+                        <li>Indian Cormorant</li>
+                        <li>Herons and Egrets</li>
+                        <li>Kingfishers</li>
+                    </ul>
+                    <h5 class="mt-3">Best time to visit</h5>
+                    <p class="text-muted">November–February (migratory season). Early morning and late afternoon offer the best sightings.</p>
+                </div>
+
+                <div class="card-list mb-4">
+                    <h3 class="fw-bold">Activities</h3>
+                    <ul class="text-muted">
+                        <li>Guided birdwatching boat trips on Vembanad Lake</li>
+                        <li>Walking trails and viewpoint hides</li>
+                        <li>Photography sessions and nature interpretation</li>
+                    </ul>
+                    <a href="plan.html" class="btn btn-primary-kerala" style="background:var(--primary);color:#fff;border:none">Plan a Visit</a>
+                </div>
+
+                <div class="card-list">
+                    <h3 class="fw-bold">Visitor Info</h3>
+                    <p class="text-muted mb-1"><strong>Location:</strong> Kumarakom, Kottayam district</p>
+                    <p class="text-muted mb-1"><strong>Timings:</strong> 6:00 AM – 6:00 PM</p>
+                    <p class="text-muted mb-1"><strong>Entry:</strong> Nominal fee; contact local tourism office for group visits and birding tours.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card-list mb-4 text-center">
+                    <h5 class="fw-bold">Quick Gallery</h5>
+                    <img src="https://images.unsplash.com/photo-1508610048659-a06f5b94f0f0?q=80&w=800&auto=format&fit=crop" class="img-fluid rounded mb-3" alt="Birds on water">
+                    <img src="https://images.unsplash.com/photo-1490818387583-1baba5e638af?q=80&w=800&auto=format&fit=crop" class="img-fluid rounded mb-3" alt="Bird hide">
+                    <img src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?q=80&w=800&auto=format&fit=crop" class="img-fluid rounded" alt="Sunrise over lake">
+                </div>
+
+                <div class="card-list">
+                    <h5 class="fw-bold">How to reach</h5>
+                    <p class="text-muted small mb-1">Nearest town: Kottayam (20 km). Nearest airport: Cochin International Airport (~75 km). Regular local transport and taxis available from Kottayam.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center small">© Department of Tourism, Government of Kerala.</div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hills of Kerala | Kerala Tourism</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+<style>
+:root {
+    --primary: #006141;
+    --accent: #F9A825;
+    --bg-light: #f5f8f7;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg-light);
+    color: #101816;
+}
+
+        /* Navbar Customization */
+        .navbar {
+            background: rgba(255, 255, 255, 0.9) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #f0f5f3;
+            padding: 1rem 0;
+        }
+        .nav-link {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #101816 !important;
+            margin: 0 15px;
+        }
+        .nav-link:hover { color: var(--primary) !important; }
+
+        /* --- New Dropdown Styles (Added to match your theme) --- */
+        .dropdown-menu {
+            border: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            padding: 0.5rem;
+            background: white;
+        }
+        .dropdown-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+            padding: 0.7rem 1.2rem;
+            border-radius: 10px;
+            color: #101816;
+        }
+        .dropdown-item:hover {
+            background-color: var(--bg-light);
+            color: var(--primary);
+        }
+        .dropdown-item .material-symbols-outlined {
+            font-size: 20px;
+            color: var(--primary);
+        }
+
+/* Hero */
+.hill-hero {
+    height: 80vh;
+    background: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.65)),
+    url('https://www.fabhotels.com/blog/wp-content/uploads/2019/09/Munnar-Kerala-1.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+/* Sections */
+.hill-section {
+    padding: 100px 0;
+}
+
+.hill-image img {
+    width: 100%;
+    height: 460px;
+    object-fit: cover;
+    border-radius: 35px;
+    box-shadow: 0 30px 60px rgba(0,0,0,.15);
+}
+
+.hill-content {
+    padding: 30px 40px;
+}
+
+.hill-content h2 {
+    font-weight: 800;
+    color: var(--primary);
+}
+
+.hill-content p {
+    line-height: 1.9;
+    color: #3b4f47;
+    margin-bottom: 15px;
+}
+
+.hill-meta {
+    display: flex;
+    gap: 28px;
+    margin: 18px 0 28px;
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.hill-meta span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.section-divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, #cfe3db, transparent);
+    margin: 100px 0;
+}
+
+footer {
+    background: #0e2f23;
+    color: #d1e7dd;
+}
+</style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center fw-bold text-primary" href="#">
+                <span class="material-symbols-outlined me-2 fs-1">travel_explore</span> Kerala Tourism
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="destDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Destinations
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="destDropdown">
+                            <li><a class="dropdown-item" href="hills.html"><span class="material-symbols-outlined">terrain</span> Hills</a></li>
+                            <li><a class="dropdown-item" href="backwaters.html"><span class="material-symbols-outlined">waves</span> Backwaters</a></li>
+                            <li><a class="dropdown-item" href="waterfall.html"><span class="material-symbols-outlined">waterfall_chart</span> Waterfall</a></li>
+                            <li><a class="dropdown-item" href="beaach.html"><span class="material-symbols-outlined">beach_access</span> Beaches</a></li>
+                            <li><a class="dropdown-item" href="wildlife.html"><span class="material-symbols-outlined">pets</span> Wild Life</a></li>
+                            <li><a class="dropdown-item" href="island.html"><span class="material-symbols-outlined">island</span> Islands</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="experiences.html">Experiences</a></li>
+                    <li class="nav-item"><a class="nav-link" href="plan.html">Plan Your Trip</a></li>
+                    <li class="nav-item"><a class="nav-link" href="inndex1.html">Home</a></li>
+                </ul>
+                <button class="btn btn-primary-kerala" onclick="location.href='plan.html'">Book Now</button>
+            </div>
+        </div>
+    </nav>
+
+<!-- HERO -->
+<header class="hill-hero text-center">
+    <div class="container">
+        <h1 class="display-2 fw-black mb-3">Hills of Kerala</h1>
+        <p class="fs-4 opacity-90">
+            Misty peaks, sacred forests and breathtaking landscapes ⛰️
+        </p>
+    </div>
+</header>
+
+<!-- CONTENT -->
+<section class="hill-section">
+<div class="container">
+
+<!-- AGASTYAKODAM -->
+<div class="row align-items-center g-5">
+    <div class="col-lg-6 hill-image">
+        <img src="https://framedventures.com/wp-content/uploads/2021/09/trivandrum-to-agasthyakoodam-distance.jpg" alt="Agastyakoodam">
+    </div>
+    <div class="col-lg-6 hill-content">
+        <h2>Agastyakoodam</h2>
+        <div class="hill-meta">
+            <span><span class="material-symbols-outlined">landscape</span> Western Ghats</span>
+            <span><span class="material-symbols-outlined">spa</span> Medicinal Plants</span>
+        </div>
+        <p>
+            Agastyakoodam is the second-highest peak in Kerala and one of the most sacred mountains
+            in the Western Ghats. Named after the sage Agastya, the mountain holds immense spiritual
+            and ecological significance.
+        </p>
+        <p>
+            The region is renowned for its rare medicinal plants and rich biodiversity, making it a
+            protected ecological zone. Trekking to Agastyakoodam is allowed only during specific seasons
+            under strict forest regulations.
+        </p>
+        <p>
+            The trek offers breathtaking views of dense forests, mist-covered valleys, and pristine
+            landscapes untouched by modern development.
+        </p>
+    </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- CHEMBRA -->
+<div class="row align-items-center g-5 flex-lg-row-reverse">
+    <div class="col-lg-6 hill-image">
+        <img src="https://www.treksandtrails.org/blog/wp-content/uploads/2020/07/Chembra-Peak-Trek-1-scaled.jpg" alt="Chembra Peak">
+    </div>
+    <div class="col-lg-6 hill-content">
+        <h2>Chembra Peak</h2>
+        <div class="hill-meta">
+            <span><span class="material-symbols-outlined">hiking</span> Trekking</span>
+            <span><span class="material-symbols-outlined">favorite</span> Heart Lake</span>
+        </div>
+        <p>
+            Chembra Peak is the highest peak in Wayanad district and one of the most popular trekking
+            destinations in Kerala. The peak rises majestically above tea plantations and rolling hills.
+        </p>
+        <p>
+            A major highlight of the trek is the heart-shaped lake located midway, which remains
+            filled with water throughout the year and has become a symbol of Chembra.
+        </p>
+        <p>
+            The trek offers panoramic views of the Western Ghats and provides an adventurous yet
+            rewarding experience for nature enthusiasts.
+        </p>
+    </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- PONMUDI -->
+<div class="row align-items-center g-5">
+    <div class="col-lg-6 hill-image">
+        <img src="https://www.keralatourism.org/_next/image/?url=http:%2F%2F127.0.0.1%2Fktadmin%2Fimg%2Fpages%2Flarge-desktop%2Fponmudi-1707378072_2cd5893681b661dbcc70.webp&w=3840&q=75" alt="Ponmudi Hills">
+    </div>
+    <div class="col-lg-6 hill-content">
+        <h2>Ponmudi</h2>
+        <div class="hill-meta">
+            <span><span class="material-symbols-outlined">route</span> Winding Roads</span>
+            <span><span class="material-symbols-outlined">eco</span> Eco Tourism</span>
+        </div>
+        <p>
+            Ponmudi is a charming hill station located near Thiruvananthapuram, known for its winding
+            roads, misty climate, and lush green valleys. The name Ponmudi literally means “Golden Peak.”
+        </p>
+        <p>
+            The hill station is part of the Western Ghats and is rich in flora and fauna, making it a
+            favorite destination for nature lovers and photographers.
+        </p>
+        <p>
+            Ponmudi offers a refreshing retreat with scenic viewpoints, trekking trails, and a calm
+            atmosphere ideal for short hill getaways.
+        </p>
+    </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- NELLIYAMPATHY -->
+<div class="row align-items-center g-5 flex-lg-row-reverse">
+    <div class="col-lg-6 hill-image">
+        <img src="https://www.keralatourism.org/images/destination/large/nelliyampathy_hills_palakkad20131031111644_152_1.jpg" alt="Nelliyampathy Hills">
+    </div>
+    <div class="col-lg-6 hill-content">
+        <h2>Nelliyampathy Hills</h2>
+        <div class="hill-meta">
+            <span><span class="material-symbols-outlined">forest</span> Evergreen Forests</span>
+            <span><span class="material-symbols-outlined">visibility</span> Viewpoints</span>
+        </div>
+        <p>
+            Nelliyampathy Hills is a lesser-known hill station in Palakkad district, offering dense forests,
+            tea and coffee plantations, and breathtaking viewpoints overlooking the plains.
+        </p>
+        <p>
+            The hills are part of the Western Ghats and are known for their cool climate, wildlife,
+            and unspoiled natural beauty.
+        </p>
+        <p>
+            Ideal for travelers seeking solitude, Nelliyampathy provides a peaceful escape with scenic
+            drives, trekking opportunities, and panoramic views.
+        </p>
+    </div>
+</div>
+
+</div>
+</section>
+
+<footer class="py-4 text-center">
+    <p class="mb-0 small">
+        © 2026 Department of Tourism, Government of Kerala. All rights reserved.
+    </p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

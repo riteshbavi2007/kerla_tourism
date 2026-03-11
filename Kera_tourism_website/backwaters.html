@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Backwaters of Kerala | Kerala Tourism</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+<style>
+:root {
+    --primary: #006141;
+    --accent: #F9A825;
+    --bg-light: #f5f8f7;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg-light);
+    color: #101816;
+}
+
+        /* Navbar Customization */
+        .navbar {
+            background: rgba(255, 255, 255, 0.9) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #f0f5f3;
+            padding: 1rem 0;
+        }
+        .nav-link {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #101816 !important;
+            margin: 0 15px;
+        }
+        .nav-link:hover { color: var(--primary) !important; }
+
+        /* --- New Dropdown Styles (Added to match your theme) --- */
+        .dropdown-menu {
+            border: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            padding: 0.5rem;
+            background: white;
+        }
+        .dropdown-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+            padding: 0.7rem 1.2rem;
+            border-radius: 10px;
+            color: #101816;
+        }
+        .dropdown-item:hover {
+            background-color: var(--bg-light);
+            color: var(--primary);
+        }
+        .dropdown-item .material-symbols-outlined {
+            font-size: 20px;
+            color: var(--primary);
+        }
+
+/* Hero */
+.backwater-hero {
+    height: 75vh;
+    background: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.65)),
+    url('https://www.tripsavvy.com/thmb/P-vBKShJXcsDT_5m-IF2xSMQ8q0=/3600x2400/filters:fill(auto,1)/GettyImages-522478216-5ab12c4e3de4230036949cee.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+/* Section */
+.backwater-section {
+    padding: 90px 0;
+}
+
+.backwater-image img {
+    width: 100%;
+    height: 430px;
+    object-fit: cover;
+    border-radius: 30px;
+    box-shadow: 0 25px 50px rgba(0,0,0,.12);
+}
+
+.backwater-content {
+    padding: 30px;
+}
+
+.backwater-content h2 {
+    font-weight: 800;
+    color: var(--primary);
+}
+
+.backwater-content p {
+    line-height: 1.9;
+    color: #3b4f47;
+    margin-bottom: 15px;
+}
+
+.backwater-meta {
+    display: flex;
+    gap: 25px;
+    margin: 18px 0 25px;
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.backwater-meta span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.section-divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, #cfe3db, transparent);
+    margin: 90px 0;
+}
+
+footer {
+    background: #0e2f23;
+    color: #d1e7dd;
+}
+
+        /* General Utilities */
+        .btn-primary-kerala {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            font-weight: 700;
+            border-radius: 10px;
+        }
+        .btn-accent-kerala {
+            background-color: var(--accent);
+            color: var(--primary);
+            font-weight: 700;
+        }
+        
+</style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center fw-bold text-primary" href="#">
+                <span class="material-symbols-outlined me-2 fs-1">travel_explore</span> Kerala Tourism
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="destDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Destinations
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="destDropdown">
+                            <li><a class="dropdown-item" href="hills.html"><span class="material-symbols-outlined">terrain</span> Hills</a></li>
+                            <li><a class="dropdown-item" href="backwaters.html"><span class="material-symbols-outlined">waves</span> Backwaters</a></li>
+                            <li><a class="dropdown-item" href="waterfall.html"><span class="material-symbols-outlined">waterfall_chart</span> Waterfall</a></li>
+                            <li><a class="dropdown-item" href="beaach.html"><span class="material-symbols-outlined">beach_access</span> Beaches</a></li>
+                            <li><a class="dropdown-item" href="wildlife.html"><span class="material-symbols-outlined">pets</span> Wild Life</a></li>
+                            <li><a class="dropdown-item" href="island.html"><span class="material-symbols-outlined">island</span> Islands</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="experiences.html">Experiences</a></li>
+                    <li class="nav-item"><a class="nav-link" href="plan.html">Plan Your Trip</a></li>
+                    <li class="nav-item"><a class="nav-link" href="inndex1.html">Home</a></li>
+                </ul>
+                <button class="btn btn-primary-kerala" onclick="location.href='plan.html'">Book Now</button>
+            </div>
+        </div>
+    </nav>
+
+<!-- HERO -->
+<header class="backwater-hero text-center">
+    <div class="container">
+        <h1 class="display-2 fw-black mb-3">Backwaters of Kerala</h1>
+        <p class="fs-4 opacity-90">
+            A timeless journey through canals, lakes and village life 🌿
+        </p>
+    </div>
+</header>
+
+<!-- CONTENT -->
+<section class="backwater-section">
+<div class="container">
+
+<!-- ALAPPUZHA -->
+<div class="row align-items-center g-5">
+    <div class="col-lg-6 backwater-image">
+        <img src="https://img.freepik.com/premium-photo/houseboat-alappuzha-backwaters-kerala_78361-13401.jpg?w=2000" alt="Alappuzha Backwaters">
+    </div>
+    <div class="col-lg-6 backwater-content">
+        <h2>Alappuzha Backwaters</h2>
+        <div class="backwater-meta">
+            <span><span class="material-symbols-outlined">directions_boat</span> Houseboats</span>
+            <span><span class="material-symbols-outlined">water</span> Vembanad Lake</span>
+        </div>
+        <p>
+            Alappuzha is the most iconic backwater destination in Kerala and is often referred to as the
+            “Venice of the East.” The region is crisscrossed by an extensive network of canals, lagoons,
+            and lakes that form the heart of Kerala’s backwater tourism.
+        </p>
+        <p>
+            Traditional houseboats, locally known as kettuvallams, glide slowly through the waterways,
+            offering visitors a unique opportunity to experience village life along the banks.
+            Coconut palms, paddy fields, and small hamlets create a serene and picturesque setting.
+        </p>
+        <p>
+            The backwaters are connected to the vast Vembanad Lake, the largest freshwater lake in Kerala,
+            which also hosts the famous Nehru Trophy Snake Boat Race held annually.
+        </p>
+    </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- ASHTAMUDI -->
+<div class="row align-items-center g-5 flex-lg-row-reverse">
+    <div class="col-lg-6 backwater-image">
+        <img src="https://images.unsplash.com/photo-1593693397690-362cb9666fc2?q=80&w=1200" alt="Ashtamudi Lake">
+    </div>
+    <div class="col-lg-6 backwater-content">
+        <h2>Ashtamudi Lake, Kollam</h2>
+        <div class="backwater-meta">
+            <span><span class="material-symbols-outlined">eco</span> Ramsar Wetland</span>
+            <span><span class="material-symbols-outlined">map</span> Eight Channels</span>
+        </div>
+        <p>
+            Ashtamudi Lake is the second-largest lake in Kerala and is named after its eight prominent
+            channels that branch out like palm leaves. It serves as the gateway to the Kerala backwaters
+            from the historic port town of Kollam.
+        </p>
+        <p>
+            The lake is surrounded by lush coconut groves, small islands, and traditional villages where
+            activities such as clam harvesting and coir making are still practiced.
+        </p>
+        <p>
+            Recognized as a Ramsar Wetland of International Importance, Ashtamudi Lake supports a rich
+            ecosystem and offers a calm, immersive backwater experience.
+        </p>
+    </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- KUTTANAD -->
+<div class="row align-items-center g-5">
+    <div class="col-lg-6 backwater-image">
+        <img src="https://media.istockphoto.com/id/667413622/photo/kerala-backwaters.jpg?s=612x612&w=0&k=20&c=_6knIuZQMsXLs9PHVgalZ7LI-Do5ZtL3VLSicKcDUmk=" alt="Kuttanad">
+    </div>
+    <div class="col-lg-6 backwater-content">
+        <h2>Kuttanad</h2>
+        <div class="backwater-meta">
+            <span><span class="material-symbols-outlined">agriculture</span> Below Sea Level</span>
+            <span><span class="material-symbols-outlined">grass</span> Paddy Fields</span>
+        </div>
+        <p>
+            Kuttanad is a unique region in Kerala known as the “Rice Bowl of the State.”
+            It is one of the very few places in the world where farming is carried out below sea level,
+            protected by an elaborate system of bunds and canals.
+        </p>
+        <p>
+            The landscape of Kuttanad is characterized by endless green paddy fields, narrow waterways,
+            and traditional villages accessible mainly by boats.
+        </p>
+        <p>
+            Traveling through Kuttanad offers a deep insight into Kerala’s agrarian lifestyle and showcases
+            a harmonious relationship between nature and human ingenuity.
+        </p>
+    </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- KUMBALANGI -->
+<div class="row align-items-center g-5 flex-lg-row-reverse">
+    <div class="col-lg-6 backwater-image">
+        <img src="https://img.onmanorama.com/content/dam/mm/en/travel/kerala/images/2021/7/14/kumbalangi.jpg" alt="Kumbalangi">
+    </div>
+    <div class="col-lg-6 backwater-content">
+        <h2>Kumbalangi</h2>
+        <div class="backwater-meta">
+            <span><span class="material-symbols-outlined">group</span> Eco-Tourism Village</span>
+            <span><span class="material-symbols-outlined">pets</span> Fishing Culture</span>
+        </div>
+        <p>
+            Kumbalangi is India’s first officially declared eco-tourism village and is a model for
+            sustainable tourism in Kerala. Located close to Kochi, the village is surrounded by
+            backwaters, mangroves, and coconut groves.
+        </p>
+        <p>
+            Visitors can observe traditional fishing methods such as Chinese fishing nets, crab farming,
+            and clam harvesting, which form the backbone of the local economy.
+        </p>
+        <p>
+            Kumbalangi offers an authentic village experience while promoting environmental conservation
+            and community-based tourism.
+        </p>
+    </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- KAVVAYI -->
+<div class="row align-items-center g-5">
+    <div class="col-lg-6 backwater-image">
+        <img src="kavvyi_backwaters.jpg" alt="Kavvayi Backwaters">
+    </div>
+    <div class="col-lg-6 backwater-content">
+        <h2>Kavvayi Backwaters</h2>
+        <div class="backwater-meta">
+            <span><span class="material-symbols-outlined">forest</span> Mangroves</span>
+            <span><span class="material-symbols-outlined">directions_boat</span> Kayaking</span>
+        </div>
+        <p>
+            Kavvayi Backwaters consist of a beautiful cluster of islands surrounded by rivers, canals,
+            and creeks in northern Kerala. Unlike many popular backwater destinations, Kavvayi remains
+            largely untouched by mass tourism.
+        </p>
+        <p>
+            The region is rich in mangrove forests and supports a diverse range of bird and aquatic species,
+            making it an excellent destination for eco-tourism and nature exploration.
+        </p>
+        <p>
+            Kayaking, canoeing, and village walks are popular activities, offering visitors a peaceful
+            and immersive experience close to nature.
+        </p>
+    </div>
+</div>
+
+</div>
+</section>
+
+<footer class="py-4 text-center">
+    <p class="mb-0 small">
+        © 2026 Department of Tourism, Government of Kerala. All rights reserved.
+    </p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

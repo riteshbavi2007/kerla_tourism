@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Islands of Kerala | Kerala Tourism</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+<style>
+:root{
+    --primary:#006141;
+    --accent:#00a98f;
+    --light:#f4faf8;
+}
+
+body{
+    font-family:'Plus Jakarta Sans',sans-serif;
+    background:var(--light);
+    color:#122c24;
+}
+
+        /* Navbar Customization */
+        .navbar {
+            background: rgba(255, 255, 255, 0.9) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #f0f5f3;
+            padding: 1rem 0;
+        }
+        .nav-link {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #101816 !important;
+            margin: 0 15px;
+        }
+        .nav-link:hover { color: var(--primary) !important; }
+
+        /* --- New Dropdown Styles (Added to match your theme) --- */
+        .dropdown-menu {
+            border: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            padding: 0.5rem;
+            background: white;
+        }
+        .dropdown-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+            padding: 0.7rem 1.2rem;
+            border-radius: 10px;
+            color: #101816;
+        }
+        .dropdown-item:hover {
+            background-color: var(--bg-light);
+            color: var(--primary);
+        }
+        .dropdown-item .material-symbols-outlined {
+            font-size: 20px;
+            color: var(--primary);
+        }
+
+/* HERO */
+.island-hero{
+    height:80vh;
+    background:
+    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.65)),
+    url('https://img.onmanorama.com/content/dam/mm/en/travel/outside-kerala/images/2024/1/14/lakshadweep1.jpg');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    color:#fff;
+}
+
+/* SECTION */
+.island-section{
+    padding:100px 0;
+}
+
+.island-block{
+    background:#fff;
+    border-radius:40px;
+    overflow:hidden;
+    box-shadow:0 40px 90px rgba(0,0,0,.12);
+}
+
+.island-img img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.island-content{
+    padding:50px;
+}
+
+.island-content h2{
+    font-weight:800;
+    color:var(--primary);
+}
+
+.island-meta{
+    display:flex;
+    gap:25px;
+    margin:15px 0 25px;
+    font-size:.9rem;
+    color:#6c757d;
+}
+
+.island-meta span{
+    display:flex;
+    align-items:center;
+    gap:6px;
+}
+
+.island-content p{
+    line-height:1.9;
+    color:#3b5f54;
+    margin-bottom:15px;
+}
+
+.wave-divider{
+    height:120px;
+    background:linear-gradient(to bottom, transparent, #cfeae3, transparent);
+}
+
+footer{
+    background:#0c2e23;
+    color:#d4efe7;
+}
+</style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center fw-bold text-primary" href="#">
+                <span class="material-symbols-outlined me-2 fs-1">travel_explore</span> Kerala Tourism
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="destDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Destinations
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="destDropdown">
+                            <li><a class="dropdown-item" href="hills.html"><span class="material-symbols-outlined">terrain</span> Hills</a></li>
+                            <li><a class="dropdown-item" href="backwaters.html"><span class="material-symbols-outlined">waves</span> Backwaters</a></li>
+                            <li><a class="dropdown-item" href="waterfall.html"><span class="material-symbols-outlined">waterfall_chart</span> Waterfall</a></li>
+                            <li><a class="dropdown-item" href="beaach.html"><span class="material-symbols-outlined">beach_access</span> Beaches</a></li>
+                            <li><a class="dropdown-item" href="wildlife.html"><span class="material-symbols-outlined">pets</span> Wild Life</a></li>
+                            <li><a class="dropdown-item" href="island.html"><span class="material-symbols-outlined">island</span> Islands</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="experiences.html">Experiences</a></li>
+                    <li class="nav-item"><a class="nav-link" href="plan.html">Plan Your Trip</a></li>
+                    <li class="nav-item"><a class="nav-link" href="inndex1.html">Home</a></li>
+                </ul>
+                <button class="btn btn-primary-kerala" onclick="location.href='plan.html'">Book Now</button>
+            </div>
+        </div>
+    </nav>
+
+<!-- HERO -->
+<header class="island-hero text-center">
+    <div class="container">
+        <h1 class="display-2 fw-black mb-3">Islands of Kerala</h1>
+        <p class="fs-4 opacity-90">
+            Tranquil islands surrounded by backwaters, history, and nature 🌿
+        </p>
+    </div>
+</header>
+
+<section class="island-section">
+<div class="container">
+
+<!-- KURUWEEP -->
+<div class="island-block row g-0 mb-5">
+    <div class="col-lg-6 island-img">
+        <img src="https://www.munnar.holiday/munnartourism/wp-content/uploads/2025/05/Wayanad-kuruva-island.jpg" alt="Kuruva Island">
+    </div>
+    <div class="col-lg-6 island-content">
+        <h2>Kuruva (Kuruvadweep)</h2>
+        <div class="island-meta">
+            <span><span class="material-symbols-outlined">eco</span> Protected Forest</span>
+            <span><span class="material-symbols-outlined">water</span> Kabini River</span>
+        </div>
+        <p>
+            Kuruvadweep, popularly known as Kuruva Island, is a group of small river islands located
+            in Wayanad district. Surrounded by the crystal-clear waters of the Kabini River, the island
+            remains untouched and uninhabited.
+        </p>
+        <p>
+            Dense bamboo groves, rare species of birds, butterflies, and medicinal plants make
+            Kuruvadweep a biodiversity hotspot. Access to the island is regulated to preserve
+            its fragile ecosystem.
+        </p>
+        <p>
+            Wooden rafts and hanging bridges add to the charm, making it an ideal destination for
+            eco-tourism and nature walks.
+        </p>
+    </div>
+</div>
+
+<div class="wave-divider"></div>
+
+<!-- MUNROE -->
+<div class="island-block row g-0 mb-5 flex-lg-row-reverse">
+    <div class="col-lg-6 island-img">
+        <img src="https://www.noblehousetours.com/wp-content/uploads/2017/12/munroe-island-kollam.jpg" alt="Munroe Island">
+    </div>
+    <div class="col-lg-6 island-content">
+        <h2>Munroe Island</h2>
+        <div class="island-meta">
+            <span><span class="material-symbols-outlined">kayaking</span> Canal Cruise</span>
+            <span><span class="material-symbols-outlined">groups</span> Village Life</span>
+        </div>
+        <p>
+            Munroe Island is a scenic cluster of eight small islands located at the confluence
+            of Ashtamudi Lake and the Kallada River in Kollam district.
+        </p>
+        <p>
+            Known for its peaceful village life, coconut plantations, and narrow canals,
+            Munroe Island offers an authentic backwater experience away from crowded tourist spots.
+        </p>
+        <p>
+            Canoe rides through the canals provide close interaction with local life,
+            migratory birds, and lush landscapes, making it a paradise for slow travelers.
+        </p>
+    </div>
+</div>
+
+<div class="wave-divider"></div>
+
+<!-- BOLGATTY -->
+<div class="island-block row g-0 mb-5">
+    <div class="col-lg-6 island-img">
+        <img src="https://www.keralatourism.org/images/destination/large/bolgatty_palace20200114092434_180_1.jpg" alt="Bolgatty Island">
+    </div>
+    <div class="col-lg-6 island-content">
+        <h2>Bolgatty Island</h2>
+        <div class="island-meta">
+            <span><span class="material-symbols-outlined">castle</span> Historic Fort</span>
+            <span><span class="material-symbols-outlined">sailing</span> Kochi Backwaters</span>
+        </div>
+        <p>
+            Bolgatty Island is one of the oldest European settlements in Kerala, located near Kochi.
+            The island is famous for the Bolgatty Palace, built by the Dutch in 1744.
+        </p>
+        <p>
+            Surrounded by serene backwaters, Bolgatty Island blends colonial heritage with modern
+            tourism facilities including luxury resorts and marina services.
+        </p>
+        <p>
+            Today, the island is a preferred destination for heritage lovers, leisure travelers,
+            and business conferences.
+        </p>
+    </div>
+</div>
+
+<div class="wave-divider"></div>
+
+<!-- PATHIRAMANAL -->
+<div class="island-block row g-0">
+    <div class="col-lg-6 island-img">
+        <img src="https://i.ytimg.com/vi/p1SA9FLaOds/maxresdefault.jpg" alt="Pathiramanal Island">
+    </div>
+    <div class="col-lg-6 island-content">
+        <h2>Pathiramanal Island</h2>
+        <div class="island-meta">
+            <span><span class="material-symbols-outlined">pets</span> Migratory Birds</span>
+            <span><span class="material-symbols-outlined">nature</span> Vembanad Lake</span>
+        </div>
+        <p>
+            Pathiramanal Island is a small, lush green island situated in the middle of
+            Vembanad Lake near Alappuzha. Its name means “Sands of the Night.”
+        </p>
+        <p>
+            The island is a haven for bird watchers, hosting numerous migratory and native bird species
+            throughout the year.
+        </p>
+        <p>
+            Accessible only by boat, Pathiramanal offers a tranquil escape into nature, surrounded
+            by backwaters and vibrant aquatic life.
+        </p>
+    </div>
+</div>
+
+</div>
+</section>
+
+<footer class="py-4 text-center">
+    <p class="mb-0 small">
+        © 2026 Department of Tourism, Government of Kerala. All rights reserved.
+    </p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
