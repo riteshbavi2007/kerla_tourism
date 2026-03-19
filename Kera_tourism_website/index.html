@@ -22,6 +22,7 @@
             color: #101816;
         }
 
+        /* Navbar Customization */
         .navbar {
             background: rgba(255, 255, 255, 0.9) !important;
             backdrop-filter: blur(10px);
@@ -56,7 +57,12 @@
             background-color: var(--bg-light);
             color: var(--primary);
         }
+        .dropdown-item .material-symbols-outlined {
+            font-size: 20px;
+            color: var(--primary);
+        }
 
+        /* Hero Section */
         .hero {
             height: 85vh;
             min-height: 600px;
@@ -69,6 +75,7 @@
             color: white;
         }
 
+        /* Floating Search Bar */
         .search-box {
             background: white;
             border-radius: 20px;
@@ -78,7 +85,19 @@
             position: relative;
             z-index: 10;
         }
+        .search-input-group {
+            border-right: 1px solid #eee;
+            padding: 0 15px;
+        }
+        .search-label {
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: #6c757d;
+            display: block;
+        }
 
+        /* Destination Cards */
         .dest-card {
             position: relative;
             border-radius: 1.5rem;
@@ -91,8 +110,9 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.5s ease;
         }
-
+        .dest-card:hover img { transform: scale(1.1); }
         .card-overlay {
             position: absolute;
             bottom: 0; left: 0; right: 0;
@@ -100,7 +120,17 @@
             background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
             color: white;
         }
+        .glass-badge {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 12px;
+            padding: 1rem;
+            transition: all 0.3s ease;
+        }
+        .dest-card:hover .glass-badge { transform: translateY(-5px); }
 
+        /* General Utilities */
         .btn-primary-kerala {
             background-color: var(--primary);
             color: white;
@@ -109,43 +139,251 @@
             font-weight: 700;
             border-radius: 10px;
         }
+        .btn-accent-kerala {
+            background-color: var(--accent);
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        /* Ritesh Bavi Banner */
+        .ritesh-banner {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .ritesh-banner h2 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin: 0;
+            letter-spacing: 0.08em;
+            color: var(--accent);
+        }
     </style>
 </head>
-
 <body>
 
-    <nav class="navbar navbar-expand-lg fixed-top shadow-sm">
+    <!-- Ritesh Bavi Name Banner -->
+    <div class="ritesh-banner">
+        <h2>Ritesh Bavi</h2>
+    </div>
+
+    <nav class="navbar navbar-expand-lg fixed-top shadow-sm" style="top: 46px;">
         <div class="container">
-            <a class="navbar-brand fw-bold text-primary" href="#">Kerala Tourism</a>
-
-            <!-- ✅ ADDED ONLY THIS -->
-            <div class="ms-auto">
-                <span class="fw-bold text-dark">Ritesh Bavi</span>
+            <a class="navbar-brand d-flex align-items-center fw-bold text-primary" href="#">
+                <span class="material-symbols-outlined me-2 fs-1">travel_explore</span> Kerala Tourism
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="destDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Destinations
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="destDropdown">
+                            <li><a class="dropdown-item" href="hills.html"><span class="material-symbols-outlined">terrain</span> Hills</a></li>
+                            <li><a class="dropdown-item" href="backwaters.html"><span class="material-symbols-outlined">waves</span> Backwaters</a></li>
+                            <li><a class="dropdown-item" href="waterfall.html"><span class="material-symbols-outlined">waterfall_chart</span> Waterfalls</a></li>
+                            <li><a class="dropdown-item" href="beaach.html"><span class="material-symbols-outlined">beach_access</span> Beaches</a></li>
+                            <li><a class="dropdown-item" href="wildlife.html"><span class="material-symbols-outlined">pets</span> Wildlife</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="experiences.html">Experiences</a></li>
+                    <li class="nav-item"><a class="nav-link" href="plan.html">Plan Your Trip</a></li>
+                    <li class="nav-item"><a class="nav-link" href="inndex1.html">Home</a></li>
+                </ul>
+                <button class="btn btn-primary-kerala" onclick="location.href='plan.html'">Book Now</button>
             </div>
-
         </div>
     </nav>
 
-    <header class="hero text-center">
+    <header class="hero text-center" style="margin-top: 46px;">
         <div class="container">
-            <h1 class="display-2 fw-bold mb-3">God's Own Country Awaits.</h1>
-            <p class="fs-4 mb-5">Experience the serenity of nature in its purest form.</p>
+            <h1 class="display-2 fw-black mb-3">God's Own Country Awaits.</h1>
+            <p class="fs-4 opacity-90 mb-5">Experience the serenity of nature in its purest form.</p>
         </div>
     </header>
 
-    <main class="container my-5">
-        <h2 class="fw-bold">Popular Destinations</h2>
-        <p class="text-muted">Curated locations for your perfect getaway.</p>
+    <div class="container">
+        <div class="search-box row g-0 align-items-center">
+            <div class="col-md-3 search-input-group">
+                <span class="search-label">Destination</span>
+                <div class="d-flex align-items-center">
+                    <span class="material-symbols-outlined text-primary me-2">search</span>
+                    <input type="text" class="form-control border-0 shadow-none p-0" placeholder="Where to?">
+                </div>
+            </div>
+            <div class="col-md-3 search-input-group">
+                <span class="search-label">Dates</span>
+                <div class="d-flex align-items-center">
+                    <span class="material-symbols-outlined text-primary me-2">calendar_month</span>
+                    <input type="text" class="form-control border-0 shadow-none p-0" placeholder="Add dates">
+                </div>
+            </div>
+            <div class="col-md-3 search-input-group">
+                <span class="search-label">Guests</span>
+                <div class="d-flex align-items-center">
+                    <span class="material-symbols-outlined text-primary me-2">person_add</span>
+                    <input type="text" class="form-control border-0 shadow-none p-0" placeholder="Add guests">
+                </div>
+            </div>
+            <div class="col-md-3 p-2">
+                <button class="btn btn-primary-kerala w-100 py-3 d-flex align-items-center justify-content-center">
+                    <span class="material-symbols-outlined me-2">travel_explore</span> Search
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <main class="container my-5 py-5">
+        <div class="d-flex justify-content-between align-items-end mb-5">
+            <div>
+                <h2 class="fw-bold display-6">Popular Destinations</h2>
+                <p class="text-muted">Curated locations for your perfect getaway.</p>
+            </div>
+            <a href="#" class="text-primary fw-bold text-decoration-none d-none d-md-block">View all destinations →</a>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-sm-6 col-lg-3">
+                <div class="dest-card" onclick="location.href='thattekad_bird.html'">
+                    <img src="thattekad_bird_.jpg" alt="Thattekkad">
+                    <div class="card-overlay">
+                        <div class="glass-badge">
+                            <h5 class="m-0 fw-bold">Thattekkad Sanctuary</h5>
+                            <small class="opacity-75">Bird Watching</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3">
+                <div class="dest-card" onclick="location.href='bekal_.html'">
+                    <img src="bekal_fort1.jpg" alt="Bekal">
+                    <div class="card-overlay">
+                        <div class="glass-badge">
+                            <h5 class="m-0 fw-bold">Bekal Fort</h5>
+                            <small class="opacity-75">Heritage</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3">
+                <div class="dest-card" onclick="location.href='periyar_reserve.html'">
+                    <img src="periyar_tiger.jpg" alt="Periyar">
+                    <div class="card-overlay">
+                        <div class="glass-badge">
+                            <h5 class="m-0 fw-bold">Periyar Tiger Reserve</h5>
+                            <small class="opacity-75">Wildlife</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3">
+                <div class="dest-card" onclick="location.href='kumarkom.html'">
+                    <img src="Kumarakom.jpg" alt="Kumarakom">
+                    <div class="card-overlay">
+                        <div class="glass-badge">
+                            <h5 class="m-0 fw-bold">Kumarakom</h5>
+                            <small class="opacity-75">Backwaters</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3">
+                <div class="dest-card" onclick="location.href='Athirappilly.html'">
+                    <img src="Athirappilly_.jpg" alt="Athirappilly">
+                    <div class="card-overlay">
+                        <div class="glass-badge">
+                            <h5 class="m-0 fw-bold">Athirappilly</h5>
+                            <small class="opacity-75">Waterfalls</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3">
+                <div class="dest-card" onclick="location.href='Munnar.html'">
+                    <img src="Munnar (1).jpg" alt="Munnar">
+                    <div class="card-overlay">
+                        <div class="glass-badge">
+                            <h5 class="m-0 fw-bold">Munnar</h5>
+                            <small class="opacity-75">Hill Station</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3">
+                <div class="dest-card" onclick="location.href='kovalm.html'">
+                    <img src="Kovalam.jpg" alt="Kovalam">
+                    <div class="card-overlay">
+                        <div class="glass-badge">
+                            <h5 class="m-0 fw-bold">Kovalam</h5>
+                            <small class="opacity-75">Beach</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3">
+                <div class="dest-card" onclick="location.href='kavvayi.html'">
+                    <img src="kavvyi_backwaters.jpg" alt="Kavvayi">
+                    <div class="card-overlay">
+                        <div class="glass-badge">
+                            <h5 class="m-0 fw-bold">Kavvayi Backwaters</h5>
+                            <small class="opacity-75">Eco Tourism</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
-    <!-- ✅ FOOTER (UNCHANGED) -->
     <footer class="bg-dark text-white py-5 mt-5">
-        <div class="container text-center">
-            <h3 class="fw-bold">Kerala Tourism</h3>
-            <p class="text-secondary small">
-                © 2023 Department of Tourism, Government of Kerala. All rights reserved.<br>
-                Designed by <strong>Ritesh Bavi</strong>
-            </p>
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-md-4">
+                    <div class="d-flex align-items-center mb-4">
+                        <span class="material-symbols-outlined text-accent fs-1 me-2">travel_explore</span>
+                        <h3 class="fw-bold m-0">Kerala Tourism</h3>
+                    </div>
+                    <p class="text-secondary small">Department of Tourism, Government of Kerala. Park View, Thiruvananthapuram, Kerala, India - 695 033</p>
+                </div>
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-6">
+                            <h6 class="text-accent fw-bold mb-3">Quick Links</h6>
+                            <ul class="list-unstyled small text-secondary">
+                                <li class="mb-2"><a href="#" class="text-reset text-decoration-none">About</a></li>
+                                <li class="mb-2"><a href="#" class="text-reset text-decoration-none">Destinations</a></li>
+                                <li class="mb-2"><a href="#" class="text-reset text-decoration-none">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <h6 class="text-accent fw-bold mb-3">Resources</h6>
+                            <ul class="list-unstyled small text-secondary">
+                                <li class="mb-2"><a href="#" class="text-reset text-decoration-none">Visa Info</a></li>
+                                <li class="mb-2"><a href="#" class="text-reset text-decoration-none">E-Brochures</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h6 class="text-accent fw-bold mb-3">Newsletter</h6>
+                    <div class="input-group">
+                        <input type="text" class="form-control bg-transparent border-secondary text-white" placeholder="Email Address">
+                        <button class="btn btn-accent-kerala">Join</button>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-5 border-secondary">
+            <p class="text-center text-secondary small">© 2023 Department of Tourism, Government of Kerala. All rights reserved.</p>
         </div>
     </footer>
 
